@@ -6,20 +6,19 @@ import {ERC20CappedUpgradeable} from "@openzeppelin/contracts-upgradeable/token/
 import {AccessControlUpgradeable} from "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol";
 
 contract ARAToken is ERC20CappedUpgradeable, AccessControlUpgradeable {
+    bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
 
-      bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
-
-      function initialize() initializer public {
-        __ERC20_init("ARA", "ARA");
-	__ERC20Capped_init(75000000000000000000000000);
- 	_grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+    function initialize() initializer public {
+      __ERC20_init("ARA", "ARA");
+	    __ERC20Capped_init(75000000000000000000000000);
+ 	    _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
 
-      function mint(address to, uint256 amount) public onlyRole(MINTER_ROLE) {
-        _mint(to, amount);
+    function mint(address to, uint256 amount) public onlyRole(MINTER_ROLE) {
+      _mint(to, amount);
     }
 
-      function burn(uint256 amount) public {
-        _burn(msg.sender, amount);
+    function burn(uint256 amount) public {
+      _burn(msg.sender, amount);
     }
 }
