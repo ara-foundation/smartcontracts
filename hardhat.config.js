@@ -1,9 +1,11 @@
 require("@nomicfoundation/hardhat-toolbox");
 require('@openzeppelin/hardhat-upgrades');
+require("@nomicfoundation/hardhat-verify");
 require('dotenv').config();
 
 const INFURA_KEY=process.env.INFURA_KEY;
-const PRIVATE_KEY=process.env.PRIVATE_KEY; 	
+const PRIVATE_KEY=process.env.PRIVATE_KEY;
+const ETHERSCAN_KEY=process.env.ETHERSCAN_KEY; 	
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -14,5 +16,10 @@ module.exports = {
       accounts: [PRIVATE_KEY]
     }
   },
+  etherscan: {
+    // Your API key for Etherscan
+    // Obtain one at 	
+    apiKey: ETHERSCAN_KEY
+  }
 };
                                           	
