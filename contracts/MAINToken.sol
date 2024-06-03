@@ -26,7 +26,7 @@ contract MAINToken is ERC20Upgradeable {
       uint256 public sessionId;
       uint256 public receivershipId;
 
-      mapping (uint256 => Revoke) revokes;
+      mapping (uint256 => Revoke) public revokes;
 
       event RevokeInit(address indexed initializer, uint256 sessionId, address indexed from, address to);
       event RevokeVote(address indexed voter, uint256 sessionId, uint256 votePower, bool agree);
