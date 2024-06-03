@@ -25,6 +25,7 @@ contract MAINToken is ERC20Upgradeable {
 
       uint256 public sessionId;
       uint256 public receivershipId;
+      address public leader;
 
       mapping (uint256 => Revoke) public revokes;
 
@@ -45,6 +46,7 @@ contract MAINToken is ERC20Upgradeable {
       function initialize(address to, address ara_) initializer public {
         __ERC20_init("Ara Maintainer", "MAIN");
       	_mint(to, 75000000000000000000000000);
+        leader = to;
         ara = IERC20(ara_);
       }
                        	
@@ -97,6 +99,9 @@ contract MAINToken is ERC20Upgradeable {
         
         if (thisRevoke.countYes > thisRevoke.countNo) {
           _update(thisRevoke.from, thisRevoke.to, thisRevoke.amount);
+          if (balanceOf(thisRevoke.to) > balanceOf(leader)) {
+            leader = thisRevoke.to;
+          }
         }
         thisRevoke.actionTaken = true;
         emit RevokeAction(sessionId_, thisRevoke.countYes > thisRevoke.countNo);
@@ -162,6 +167,10 @@ contract MAINToken is ERC20Upgradeable {
         
         if (thisRevoke.countYes > thisRevoke.countNo) {
           _update(thisRevoke.from, thisRevoke.to, thisRevoke.amount);
+
+          if (balanceOf(thisRevoke.to) > balanceOf(leader)) {
+            leader = thisRevoke.to;
+          }
         }
         thisRevoke.actionTaken = true;
         emit RevokeAction(receivershipId_, thisRevoke.countYes > thisRevoke.countNo);
