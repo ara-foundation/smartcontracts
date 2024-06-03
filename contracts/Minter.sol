@@ -54,7 +54,7 @@ contract Minter is Ownable {
     address public araToken;
     address public checkToken;
     address public mainToken;
-    address public treasury;
+    address public treasury;        // same as check token
     address[8] public vestingContracts;
     BridgeVoting public bridgeVoting;
 
@@ -331,6 +331,7 @@ contract Minter is Ownable {
         require(checkToken == address(0), "already set");
 
         checkToken = addr_;
+        treasury = addr_;
     }
 
     function setAra(address addr_) public onlyOwner {
@@ -350,6 +351,10 @@ contract Minter is Ownable {
         require(mainToken == address(0), "already set");
 
         mainToken = addr_;
+    }
+
+    function isCollateral(address addr_) external view returns(bool) {
+        return collaterals[addr_].feedDecimals > 0;
     }
 
     /////////////////////////////////////////////////////////////////////////////////

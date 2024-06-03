@@ -6,6 +6,7 @@ import {ERC20Upgradeable} from "@openzeppelin/contracts-upgradeable/token/ERC20/
 
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {IMAINToken} from "./IMAINToken.sol";
+import {IMinter} from "./IMinter.sol";
 
 contract CHECKToken is ERC20Upgradeable {
 
@@ -15,6 +16,7 @@ contract CHECKToken is ERC20Upgradeable {
 
       IERC20 public ara;
       IERC20 public main;
+      IMinter public minter;
 
       struct NewProject {
         Project params;
@@ -65,10 +67,11 @@ contract CHECKToken is ERC20Upgradeable {
         _;
       }
 
-      function initialize(address ara_, address main_) initializer public {
+      function initialize(address ara_, address main_, address minter_) initializer public {
         __ERC20_init("Ara Check", "CHECK");
         ara = IERC20(ara_);
         main = IERC20(main_);
+        minter = IMinter(minter_);
       }
 
       /**
@@ -170,4 +173,31 @@ contract CHECKToken is ERC20Upgradeable {
       
         projects[projectId_].cancelled = true;
       }
+
+      function redeemFromTreasury(address to, uint256 amount, address collateral) external {
+        require(balanceOf(msg.sender) >= amount, "not enough tokens");
+        require(minter.isCollateral(collateral), "invalid address");
+
+        uint256 usdAmount = minter.getUsdAmount(1000000000000000000, collateral);
+        require(usdAmount > 0, "0 usd amount");
+        uint256 collateralAmount = amount / usdAmount;
+
+        if (collateral == address(0)) {
+          payable(to).transfer(collateralAmount);
+        } else {
+          IERC20(collateral).transfer(to, collateralAmount);
+        }
+
+        _burn(msg.sender, amount);
+      }
+
+      function reedemAra(address to, uint256 amount, uint8 round) external {
+        require(balanceOf(msg.sender) >= amount, "not enough tokens");
+
+        minter.redeem(to, amount, round);
+
+        _burn(msg.sender, amount);
+      }
+
+      receive() external payable {}
 }
