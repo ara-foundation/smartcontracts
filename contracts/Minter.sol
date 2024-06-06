@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
+import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
 import {IARAToken} from "./IARAToken.sol";
 import {IVesting} from "./IVesting.sol";
@@ -12,7 +12,7 @@ import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
  * @author Medet Ahmetson <milayter@gmail.com>
  * @notice Ara Sangha governs this smartcontract.
  */
-contract Minter is Ownable {
+contract Minter is OwnableUpgradeable {
     uint256 public constant VOTING_PERIOD = 864000;
 
     // Price feeds are taken from
@@ -107,7 +107,8 @@ contract Minter is Ownable {
         _;
     }
 
-    constructor() Ownable(msg.sender) {
+    function initialize() initializer public {
+        __Ownable_init(msg.sender);
         noBridgeEndTime = block.timestamp + 63072000; // 2 years after today
 
         // First Round (Testing) = 0.024$/ARA, 12_500 Cap
