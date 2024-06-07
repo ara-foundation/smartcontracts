@@ -91,6 +91,7 @@ contract CHECKToken is ERC20Upgradeable {
         } else {
           uint256 sprintAmount = project.period / LIMIT;
           uint256 quotaPerSprint = project.amount / sprintAmount;
+          require(quotaPerSprint > 0, "0 quota per sprint");
 
           uint256 projectActivePeriod = (block.timestamp - project.startTime);
           uint256 currentSprint = 1;
@@ -185,7 +186,9 @@ contract CHECKToken is ERC20Upgradeable {
         if (collateral == address(0)) {
           payable(to).transfer(collateralAmount);
         } else {
-          IERC20(collateral).transfer(to, collateralAmount);
+          uint256 preBalance = IERC20(collateral).balanceOf(address(this));
+          require(IERC20(collateral).transfer(to, collateralAmount), "failed to transfer");
+          require(IERC20(collateral).balanceOf(address(this)) + collateralAmount == preBalance, "failed to update balance");
         }
 
         _burn(msg.sender, amount);

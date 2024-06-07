@@ -3,8 +3,10 @@ pragma solidity ^0.8.20;
 
 import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
+import {ReentrancyGuardUpgradeable}  from "@openzeppelin/contracts-upgradeable/utils/ReentrancyGuardUpgradeable.sol";
 import {IARAToken} from "./IARAToken.sol";
 import {IVesting} from "./IVesting.sol";
+import {IBridge} from "./IBridge.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 /**
@@ -12,7 +14,7 @@ import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
  * @author Medet Ahmetson <milayter@gmail.com>
  * @notice Ara Sangha governs this smartcontract.
  */
-contract Minter is OwnableUpgradeable {
+contract Minter is OwnableUpgradeable, ReentrancyGuardUpgradeable {
     uint256 public constant VOTING_PERIOD = 864000;
 
     // Price feeds are taken from
@@ -109,6 +111,7 @@ contract Minter is OwnableUpgradeable {
 
     function initialize() initializer public {
         __Ownable_init(msg.sender);
+        __ReentrancyGuard_init();
         noBridgeEndTime = block.timestamp + 63072000; // 2 years after today
 
         // First Round (Testing) = 0.024$/ARA, 12_500 Cap
@@ -140,7 +143,7 @@ contract Minter is OwnableUpgradeable {
      * @param collateralAmount of tokens user wants to put in collateral.
      * @return sessionId if it was send to the Vesting smartcontract.
      */
-    function mint(address to, uint256 collateralAmount, uint8 round, address collateral) public validRound(round) validCollateral(collateral) payable returns (uint256) {
+    function mint(address to, uint256 collateralAmount, uint8 round, address collateral) public validRound(round) validCollateral(collateral) nonReentrant payable returns (uint256) {
         require(treasury != address(0), "no treasury");
         require(collateralAmount > 0, "zero amount");
         // get amount of tokens needed from user as collateral by round
@@ -157,6 +160,8 @@ contract Minter is OwnableUpgradeable {
             require(usdAmount <= rounds[round].maxUsd, "exceeds the maximum");
         }
 
+        rounds[round].minted += araAmount;
+
         if (collateral == address(0)) {
             require(msg.value == collateralAmount, "invalid collateralAmount for eth");
             payable(treasury).transfer(collateralAmount);
@@ -166,8 +171,6 @@ contract Minter is OwnableUpgradeable {
 
         IARAToken(araToken).mint(address(this), araAmount);
 
-        rounds[round].minted += araAmount;
-
         uint256 vestingId = 0;
 
         if (isVestingRound(round)) {
@@ -176,7 +179,9 @@ contract Minter is OwnableUpgradeable {
             vestingId = IVesting(vestingAddr).initVesting(to, araAmount);
             require(vestingId > 0, "no vesting id");
         } else {
-            IERC20(araToken).transfer(to, araAmount);
+            uint256 preBalance = IERC20(araToken).balanceOf(address(this));
+            require(IERC20(araToken).transfer(to, araAmount), "failed to transfer");
+            require(IERC20(araToken).balanceOf(address(this)) + araAmount == preBalance, "invalid amount");
         }
         
         emit Mint(to, collateral, araAmount, usdAmount, round, vestingId);
@@ -195,11 +200,15 @@ contract Minter is OwnableUpgradeable {
 
     /**
      * This function burns the tokens and gives them to the bridge to transfer.
-     * @param to Mint and give to this account
      * @param amount of ARA token to mint
      */
-    function bridgeOut(address to, uint256 amount) public onlyBridge {
-        IERC20(araToken).transferFrom(to, address(this), amount);
+    function bridgeOut(uint256 amount) public {
+        require(bridge != address(0), "bridge not enabled");
+        uint256 preBalance = IERC20(araToken).balanceOf(msg.sender);
+        require(IERC20(araToken).transferFrom(msg.sender, address(this), amount), "failed to transfer");
+        require(IERC20(araToken).balanceOf(msg.sender) + amount == preBalance, "invalid amount");
+        require(IBridge(bridge).transferOut(amount, msg.sender), "bridge failed");
+
         IARAToken(araToken).burn(amount);
     }
 
@@ -223,7 +232,9 @@ contract Minter is OwnableUpgradeable {
             vestingId = IVesting(vestingAddr).initVesting(to, araAmount);
             require(vestingId > 0, "no vesting id");
         } else {
-            IERC20(araToken).transfer(to, araAmount);
+            uint256 preBalance = IERC20(araToken).balanceOf(address(this));
+            require(IERC20(araToken).transfer(to, araAmount), "failed to transfer");
+            require(IERC20(araToken).balanceOf(address(this)) + amount == preBalance, "invalid amount");
         }
         
         emit Mint(to, address(0x01), araAmount, amount, round, vestingId);
@@ -321,7 +332,7 @@ contract Minter is OwnableUpgradeable {
         require(collateralVoting.actionTaken == false, "voting finished");
         
         if (collateralVoting.countYes > collateralVoting.countNo) {
-          bridge = bridgeVoting.bridge;
+            collaterals[token] = collateralVotings[token].params;
         }
         collateralVoting.actionTaken = true;
         
@@ -393,6 +404,7 @@ contract Minter is OwnableUpgradeable {
         uint256 usdAmount = 0;
         if (collateralData.feedDecimals == collateralData.tokenDecimals) {
             usdAmount = uint256(answer) * collateralAmount / (10**collateralData.tokenDecimals);
+            require(usdAmount > 0, "usd amount 0");
             if (collateralData.feedDecimals != 18) {
                 uint8 dif = 18 - collateralData.feedDecimals;
                 usdAmount *= 10 ** uint256(dif);
