@@ -181,7 +181,7 @@ contract CHECKToken is ERC20Upgradeable {
 
         uint256 usdAmount = minter.getUsdAmount(1000000000000000000, collateral);
         require(usdAmount > 0, "0 usd amount");
-        uint256 collateralAmount = amount / usdAmount;
+        uint256 collateralAmount = amount * 1000000000000000000000000000000000000 / usdAmount / 4166666666666667000;
 
         if (collateral == address(0)) {
           payable(to).transfer(collateralAmount);
