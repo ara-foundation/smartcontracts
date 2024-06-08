@@ -261,10 +261,10 @@ contract Minter is OwnableUpgradeable, ReentrancyGuardUpgradeable {
     }
 
     function setBridgeVote(bool agree) public onlyAra {
-        require(bridgeVoting.timeStart > 0, "session not found");
+        require(bridgeVoting.timeStart > 0, "!session");
         require(bridgeVoting.voted[msg.sender] == false, "you already voted");
         require(bridgeVoting.timeStart + VOTING_PERIOD > block.timestamp
-        || bridgeVoting.actionTaken == false, "voting finished");
+        || bridgeVoting.actionTaken == false, "voting_end");
 
         if (agree) {
           bridgeVoting.countYes += IERC20(araToken).balanceOf(msg.sender);
@@ -279,9 +279,9 @@ contract Minter is OwnableUpgradeable, ReentrancyGuardUpgradeable {
     }
 
     function setBridgeAction() public onlyMaintainer {
-        require(bridgeVoting.timeStart > 0, "session not found");
-        require(canBridgeVotingTakeAction(),  "can't take action");
-        require(bridgeVoting.actionTaken == false, "voting finished");
+        require(bridgeVoting.timeStart > 0, "!session");
+        require(canBridgeVotingTakeAction(),  "!act");
+        require(bridgeVoting.actionTaken == false, "voting_end");
         
         if (bridgeVoting.countYes > bridgeVoting.countNo) {
           bridge = bridgeVoting.bridge;
@@ -306,10 +306,10 @@ contract Minter is OwnableUpgradeable, ReentrancyGuardUpgradeable {
 
     function setCollateralVote(address token, bool agree) public onlyAra {
         CollateralVoting storage collateralVoting = collateralVotings[token];
-        require(collateralVoting.timeStart > 0, "session not found");
+        require(collateralVoting.timeStart > 0, "!session");
         require(collateralVoting.voted[msg.sender] == false, "you already voted");
         require(collateralVoting.timeStart + VOTING_PERIOD > block.timestamp
-        || collateralVoting.actionTaken == false, "voting finished");
+        || collateralVoting.actionTaken == false, "voting_end");
 
         uint256 votePower = IERC20(araToken).balanceOf(msg.sender);
 
@@ -327,9 +327,9 @@ contract Minter is OwnableUpgradeable, ReentrancyGuardUpgradeable {
 
     function setCollateralAction(address token) public onlyMaintainer {
         CollateralVoting storage collateralVoting = collateralVotings[token];
-        require(collateralVoting.timeStart > 0, "session not found");
-        require(canCollateralTakeAction(collateralVoting),  "can't take action");
-        require(collateralVoting.actionTaken == false, "voting finished");
+        require(collateralVoting.timeStart > 0, "!session");
+        require(canCollateralTakeAction(collateralVoting),  "!act");
+        require(collateralVoting.actionTaken == false, "voting_end");
         
         if (collateralVoting.countYes > collateralVoting.countNo) {
             collaterals[token] = collateralVotings[token].params;
@@ -340,27 +340,27 @@ contract Minter is OwnableUpgradeable, ReentrancyGuardUpgradeable {
     }
 
     function setCheck(address addr_) public onlyOwner {
-        require(checkToken == address(0), "already set");
+        require(checkToken == address(0), "set");
 
         checkToken = addr_;
         treasury = addr_;
     }
 
     function setAra(address addr_) public onlyOwner {
-        require(araToken == address(0), "already set");
+        require(araToken == address(0), "set");
 
         araToken = addr_;
     }
 
     function setVesting(uint8 round, address addr_) public validRound(round) onlyOwner {
-        require(isVestingRound(round), "not a vesting round");
-        require(vestings[round] == address(0), "already set");
+        require(isVestingRound(round), "!vesting");
+        require(vestings[round] == address(0), "set");
 
         vestings[round] = addr_;
     }
 
     function setMaintainer(address addr_) public onlyOwner {
-        require(mainToken == address(0), "already set");
+        require(mainToken == address(0), "set");
 
         mainToken = addr_;
     }
@@ -404,7 +404,7 @@ contract Minter is OwnableUpgradeable, ReentrancyGuardUpgradeable {
         uint256 usdAmount = 0;
         if (collateralData.feedDecimals == collateralData.tokenDecimals) {
             usdAmount = uint256(answer) * collateralAmount / (10**collateralData.tokenDecimals);
-            require(usdAmount > 0, "usd amount 0");
+            require(usdAmount > 0, "0usd");
             if (collateralData.feedDecimals != 18) {
                 uint8 dif = 18 - collateralData.feedDecimals;
                 usdAmount *= 10 ** uint256(dif);

@@ -10,6 +10,6 @@ npx hardhat run ./scripts/deploy-ara.js --network testnet
 
 * MAIN Token deployed to sepolia testnet address: [0x6B56DafFfA364E1163d5D6cD2487dBeFaE64D115](https://sepolia.etherscan.io/0x6B56DafFfA364E1163d5D6cD2487dBeFaE64D115)
 
-* Minter of ARA deployed to sepolia testnet address: [0x9e0B9f1d118Cf352e7b7303f3735cc8a1b4d2E40](https://sepolia.etherscan.io/0x9e0B9f1d118Cf352e7b7303f3735cc8a1b4d2E40)
+* Minter of ARA deployed to sepolia testnet address: [0x3D22D1C81a01D7FA4B319eA4FEFFE413E3085Ab8](https://sepolia.etherscan.io/0x3D22D1C81a01D7FA4B319eA4FEFFE413E3085Ab8)
 
-* CHECK Token deployed to sepolia testnet address: [0x2F6735180127b40a35ed65E024EC01659C54d47e](https://sepolia.etherscan.io/0x2F6735180127b40a35ed65E024EC01659C54d47e)
+* CHECK Token deployed to sepolia testnet address: [0x5B91Eb2eA0F6b61FfF4a85d6421A940A842F3f2b](https://sepolia.etherscan.io/0x5B91Eb2eA0F6b61FfF4a85d6421A940A842F3f2b)
