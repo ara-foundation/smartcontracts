@@ -1,6 +1,6 @@
 require("@nomicfoundation/hardhat-toolbox");
-require('@openzeppelin/hardhat-upgrades');
 require("@nomicfoundation/hardhat-verify");
+require('@openzeppelin/hardhat-upgrades');
 require('dotenv').config();
 
 const INFURA_KEY=process.env.INFURA_KEY;
@@ -20,6 +20,9 @@ module.exports = {
     // Your API key for Etherscan
     // Obtain one at 	
     apiKey: ETHERSCAN_KEY
+  },
+  sourcify: {
+    enabled: false
   }
 };
                                           	
