@@ -24,4 +24,6 @@ In the minter smartcontract:
 
 Then the minter must accept the collaterals.
 1. Start accepting collateral by calling `setCollateralInit`.
-As the `feed` use the [Chainlink PriceFeed address](https://docs.chain.link/data-feeds/price-feeds/addresses?network=ethereum&page=1&search=EH#sepolia-testnet) along with it's decimals.
+As the `feed` use the [Chainlink PriceFeed address](https://docs.chain.link/data-feeds/price-feeds/addresses?network=ethereum&page=1&search=EH#sepolia-testnet) along with it's decimals. Only those who are paired to the USD.
+
+For the native token use the address(0): `0x0000000000000000000000000000000000000000`.
