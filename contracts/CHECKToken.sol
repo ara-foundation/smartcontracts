@@ -109,7 +109,7 @@ contract CHECKToken is ERC20Upgradeable {
         emit Mint(projectId_, to, amount, payload);
       }
 
-      function newProjectInit(address projectLeader, uint256 period, uint256 budget) public returns (uint256) {
+      function newProjectInit(address projectLeader, uint256 period, uint256 budget) public onlyLeader returns (uint256) {
         require(IERC20(main).balanceOf(projectLeader) > 0, "project leader is not a maintainer");
         require(period > 86400, "at least a day");
         require(budget > 0, "0 budget");
