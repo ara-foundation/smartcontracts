@@ -109,6 +109,7 @@ contract CHECKToken is ERC20Upgradeable {
 
         require(amount <= quota, "exceeds the quota limit");
 
+        project.minted += amount;
         _mint(to, amount);
 
         emit Mint(projectId_, to, amount, payload);
