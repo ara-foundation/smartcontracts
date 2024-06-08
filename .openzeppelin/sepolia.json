@@ -25,6 +25,16 @@
       "address": "0x5B91Eb2eA0F6b61FfF4a85d6421A940A842F3f2b",
       "txHash": "0x24c8bf369b67b192a04add3b8b8f011b855dd4c2fd815b4bced77dd1f196baa2",
       "kind": "transparent"
+    },
+    {
+      "address": "0x6e7F3BD30c9aacFf37e07E790f156D95b52b0834",
+      "txHash": "0x7daf9f6f7314169d16658e905b9bc28bf8ed5904d53bf72844134a07f79c4f39",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xac95cFE35355C90765b5129F0AB1B890DE53bA22",
+      "txHash": "0xf9c7f2cce68bad72d2d0d91c119da1ab5b3af50e67fde8a618ef1a2d4b99cc35",
+      "kind": "transparent"
     }
   ],
   "impls": {
@@ -1496,6 +1506,313 @@
             "numberOfBytes": "352"
           },
           "t_struct(Project)2294_storage": {
+            "label": "struct CHECKToken.Project",
+            "members": [
+              {
+                "label": "maintainer",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "period",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "startTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "cancelled",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.ERC20": [
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_balances",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:38",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_allowances",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:40",
+              "offset": 0,
+              "slot": "1"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:42",
+              "offset": 0,
+              "slot": "2"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_name",
+              "type": "t_string_storage",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:44",
+              "offset": 0,
+              "slot": "3"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_symbol",
+              "type": "t_string_storage",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:45",
+              "offset": 0,
+              "slot": "4"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "25e1818208b88a5750e799680bb26e41c178422b4230e58e7531242eaf2951c3": {
+      "address": "0xd0fBFF6E01d494D7898bc5e500C651baA8dc86Bd",
+      "txHash": "0x8714b9566f98572ea7cfaa95a2db390b8a5a8abb9ecbe060f0b1725cf322d61f",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "ara",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC20)1131",
+            "contract": "CHECKToken",
+            "src": "contracts\\CHECKToken.sol:17"
+          },
+          {
+            "label": "main",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_contract(IERC20)1131",
+            "contract": "CHECKToken",
+            "src": "contracts\\CHECKToken.sol:18"
+          },
+          {
+            "label": "minter",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_contract(IMinter)2023",
+            "contract": "CHECKToken",
+            "src": "contracts\\CHECKToken.sol:19"
+          },
+          {
+            "label": "projectId",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "CHECKToken",
+            "src": "contracts\\CHECKToken.sol:39"
+          },
+          {
+            "label": "projects",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint256,t_struct(Project)1216_storage)",
+            "contract": "CHECKToken",
+            "src": "contracts\\CHECKToken.sol:41"
+          },
+          {
+            "label": "newProjectVotings",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint256,t_struct(NewProject)1203_storage)",
+            "contract": "CHECKToken",
+            "src": "contracts\\CHECKToken.sol:42"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(ERC20Storage)91_storage": {
+            "label": "struct ERC20Upgradeable.ERC20Storage",
+            "members": [
+              {
+                "label": "_balances",
+                "type": "t_mapping(t_address,t_uint256)",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_allowances",
+                "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "_totalSupply",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "_name",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "_symbol",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_struct(InitializableStorage)10_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_contract(IERC20)1131": {
+            "label": "contract IERC20",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IMinter)2023": {
+            "label": "contract IMinter",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(NewProject)1203_storage)": {
+            "label": "mapping(uint256 => struct CHECKToken.NewProject)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Project)1216_storage)": {
+            "label": "mapping(uint256 => struct CHECKToken.Project)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(NewProject)1203_storage": {
+            "label": "struct CHECKToken.NewProject",
+            "members": [
+              {
+                "label": "params",
+                "type": "t_struct(Project)1216_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "8"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "9"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "10"
+              }
+            ],
+            "numberOfBytes": "352"
+          },
+          "t_struct(Project)1216_storage": {
             "label": "struct CHECKToken.Project",
             "members": [
               {

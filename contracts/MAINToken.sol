@@ -6,6 +6,11 @@ import {ERC20Upgradeable} from "@openzeppelin/contracts-upgradeable/token/ERC20/
 
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
+/**
+ * @title MAINToken is the maintainer's soulbound NFT
+ * @author Medet Ahmetson <medet@ara.foundation>
+ * @dev Depends on ARAToken
+ */
 contract MAINToken is ERC20Upgradeable {
 
       uint256 public constant REVOKE_PERIOD = 259200;

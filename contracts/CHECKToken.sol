@@ -8,6 +8,11 @@ import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {IMAINToken} from "./IMAINToken.sol";
 import {IMinter} from "./IMinter.sol";
 
+/**
+ * @title CHECKToken is the payment check issued to contributors by MAINToken holders
+ * @author Medet Ahmetson <medet@ara.foundation>
+ * @dev Requires ARAToken, MAINToken, Minter smartcontracts
+ */
 contract CHECKToken is ERC20Upgradeable {
 
       uint256 public constant REVOKE_PERIOD = 864000;
