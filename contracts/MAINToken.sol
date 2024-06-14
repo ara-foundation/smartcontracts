@@ -6,6 +6,11 @@ import {ERC20Upgradeable} from "@openzeppelin/contracts-upgradeable/token/ERC20/
 
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
+/**
+ * @title MAINToken is the maintainer's soulbound NFT
+ * @author Medet Ahmetson <medet@ara.foundation>
+ * @dev Depends on ARAToken
+ */
 contract MAINToken is ERC20Upgradeable {
 
       uint256 public constant REVOKE_PERIOD = 259200;
@@ -25,8 +30,9 @@ contract MAINToken is ERC20Upgradeable {
 
       uint256 public sessionId;
       uint256 public receivershipId;
+      address public leader;
 
-      mapping (uint256 => Revoke) revokes;
+      mapping (uint256 => Revoke) public revokes;
 
       event RevokeInit(address indexed initializer, uint256 sessionId, address indexed from, address to);
       event RevokeVote(address indexed voter, uint256 sessionId, uint256 votePower, bool agree);
@@ -45,6 +51,7 @@ contract MAINToken is ERC20Upgradeable {
       function initialize(address to, address ara_) initializer public {
         __ERC20_init("Ara Maintainer", "MAIN");
       	_mint(to, 75000000000000000000000000);
+        leader = to;
         ara = IERC20(ara_);
       }
                        	
@@ -97,6 +104,9 @@ contract MAINToken is ERC20Upgradeable {
         
         if (thisRevoke.countYes > thisRevoke.countNo) {
           _update(thisRevoke.from, thisRevoke.to, thisRevoke.amount);
+          if (balanceOf(thisRevoke.to) > balanceOf(leader)) {
+            leader = thisRevoke.to;
+          }
         }
         thisRevoke.actionTaken = true;
         emit RevokeAction(sessionId_, thisRevoke.countYes > thisRevoke.countNo);
@@ -162,6 +172,10 @@ contract MAINToken is ERC20Upgradeable {
         
         if (thisRevoke.countYes > thisRevoke.countNo) {
           _update(thisRevoke.from, thisRevoke.to, thisRevoke.amount);
+
+          if (balanceOf(thisRevoke.to) > balanceOf(leader)) {
+            leader = thisRevoke.to;
+          }
         }
         thisRevoke.actionTaken = true;
         emit RevokeAction(receivershipId_, thisRevoke.countYes > thisRevoke.countNo);
