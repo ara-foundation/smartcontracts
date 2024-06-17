@@ -34,6 +34,7 @@ For the native token use the address(0): `0x000000000000000000000000000000000000
 ## Project Smartcontracts
 
 > Example deployed smartcontracts are:
+> `0xe40c7856B6D0e1B01dECBF9976BB706B9Cd1229f` &ndash; WEF (dao) token
 > `0x0011764BfeeB78859dD044023AF6b6b6e17715f7` &ndash; frog wars check token
 > `0x9e90f6ad0E1916995b8fd6A0AEE36732f7A2A20a` &ndash; frog wars maintainer token
 
