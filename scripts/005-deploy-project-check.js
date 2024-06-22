@@ -2,8 +2,8 @@
 const { ethers, upgrades } = require('hardhat')
 
 async function main() {
-  const DaoAddr = '0xe40c7856B6D0e1B01dECBF9976BB706B9Cd1229f'
-  const MAINAddr = '0x9e90f6ad0E1916995b8fd6A0AEE36732f7A2A20a'
+  const DaoAddr = process.env.PROJECT_DAO
+  const MAINAddr = '0x6921482cEf17ecd8382A96B4e6E3749a9B6fcFd0'
 
   const name = 'FrogWifCat Check'
   const symbol = 'wfCHECK'

@@ -62,4 +62,11 @@ npx hardhat verify --network mainnet DEPLOYED_CONTRACT_ADDRESS
 
 ---
 
+Update wagmi config on the UI.
+
+- First add the addresses and network in the `packages/app/wagmi.config.ts`
+- Then, head to the `packages/app`, and call `npm run wagmi` to re-generate the abi files.
+
+---
+
 Initiate a collateral

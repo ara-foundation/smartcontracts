@@ -29,6 +29,11 @@ module.exports = {
       accounts: [PRIVATE_KEY],
       gasPrice: 72750007,
     },
+    linea: {
+      url: 'https://linea-mainnet.infura.io/v3/' + INFURA_KEY,
+      accounts: [PRIVATE_KEY],
+      gasPrice: 72750007,
+    },
   },
   etherscan: {
     // Your API key for Etherscan
@@ -36,6 +41,7 @@ module.exports = {
     apiKey: {
       testnet: ETHERSCAN_KEY,
       lineaTestnet: LINEASCAN_KEY,
+      linea: LINEASCAN_KEY,
     },
     customChains: [
       {

@@ -3,7 +3,7 @@ const { ethers } = require('hardhat')
 async function main() {
   let accounts = await ethers.getSigners()
 
-  const DaoAddr = '0xe40c7856B6D0e1B01dECBF9976BB706B9Cd1229f'
+  const DaoAddr = process.env.PROJECT_DAO
   const name = 'FrogWifCat Maintainer'
   const symbol = 'wfMAIN'
 
