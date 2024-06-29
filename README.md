@@ -3,8 +3,12 @@
 Script to deploy ARA Token:
 
 ```shell
-npx hardhat run ./scripts/deploy-ara.js --network testnet
+npx hardhat run ./scripts/000-deploy-ara-token.js --network NETWORK_NAME
 ```
+
+### Deployed smartcontracts
+
+#### Testnet (Sepolia)
 
 - ARA Token deployed to sepolia testnet address: [0x080f9A2FA8996d54ff62Ce841C9390Dc26f6dEf5](https://sepolia.etherscan.io/address/0x080f9A2FA8996d54ff62Ce841C9390Dc26f6dEf5)
 
@@ -13,6 +17,21 @@ npx hardhat run ./scripts/deploy-ara.js --network testnet
 - Minter of ARA deployed to sepolia testnet address: [0x6e7F3BD30c9aacFf37e07E790f156D95b52b0834](https://sepolia.etherscan.io/address/0x6e7F3BD30c9aacFf37e07E790f156D95b52b0834)
 
 - CHECK Token deployed to sepolia testnet address: [0xac95cFE35355C90765b5129F0AB1B890DE53bA22](https://sepolia.etherscan.io/address/0xac95cFE35355C90765b5129F0AB1B890DE53bA22)
+
+#### Mainnet (Base L2)
+
+- ARA Token deployed to Base network: [0x8fAd4d86b6cc14798882B607cD62fbdc3b5a258c](https://basescan.org/token/0x8fAd4d86b6cc14798882B607cD62fbdc3b5a258c)
+
+- MAIN Token deployed to Base network: [0xE20A78EFA6A6f14CE1229f2CF34082ABb78e92Fd](https://basescan.org/token/0xE20A78EFA6A6f14CE1229f2CF34082ABb78e92Fd)
+
+- Minter of ARA deployed to Base network: [0x72Ed11B14C69D6C9faE5544dE44e2f9E27D1f81C](https://basescan.org/address/0x72Ed11B14C69D6C9faE5544dE44e2f9E27D1f81C)
+
+- CHECK Token deployed to Base network: [0xD38359e85a064EDF54D4Bc017c92Af2AcDa194Fa](https://basescan.org/token/0xD38359e85a064EDF54D4Bc017c92Af2AcDa194Fa)
+
+##### Supported Collateral Tokens
+
+- [Tether: USDT Stablecoin](https://basescan.org/token/0xdAC17F958D2ee523a2206206994597C13D831ec7)
+- [ETH](https://basescan.org/chart/price)
 
 ### Setup
 

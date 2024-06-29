@@ -11,6 +11,7 @@ contract ARAToken is ERC20CappedUpgradeable, AccessControlUpgradeable {
       __ERC20_init("ARA", "ARA");
 	    __ERC20Capped_init(75000000000000000000000000);
  	    _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+      _mint(msg.sender, 1000000000000000000);   // Mint 1 ARA to setup the configurations
     }
 
     function mint(address to, uint256 amount) public onlyRole(MINTER_ROLE) {

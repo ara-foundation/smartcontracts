@@ -5,8 +5,10 @@ require('dotenv').config()
 
 const INFURA_KEY = process.env.INFURA_KEY
 const PRIVATE_KEY = process.env.PRIVATE_KEY
+const BASE_PRIVATE_KEY = process.env.BASE_PRIVATE_KEY
 const ETHERSCAN_KEY = process.env.ETHERSCAN_KEY
 const LINEASCAN_KEY = process.env.LINEASCAN_KEY
+const BASESCAN_KEY = process.env.BASESCAN_KEY
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -34,6 +36,10 @@ module.exports = {
       accounts: [PRIVATE_KEY],
       gasPrice: 72750007,
     },
+    base: {
+      url: 'https://base-mainnet.public.blastapi.io',
+      accounts: [BASE_PRIVATE_KEY],
+    },
   },
   etherscan: {
     // Your API key for Etherscan
@@ -42,6 +48,7 @@ module.exports = {
       testnet: ETHERSCAN_KEY,
       lineaTestnet: LINEASCAN_KEY,
       linea: LINEASCAN_KEY,
+      base: BASESCAN_KEY,
     },
     customChains: [
       {
@@ -58,6 +65,14 @@ module.exports = {
         urls: {
           apiURL: 'https://api.lineascan.build/api',
           browserURL: 'https://lineascan.build/',
+        },
+      },
+      {
+        network: 'base',
+        chainId: 8453,
+        urls: {
+          apiURL: 'https://api.basescan.org/api',
+          browserURL: 'https://basescan.org/',
         },
       },
     ],
