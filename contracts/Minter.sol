@@ -153,7 +153,8 @@ contract Minter is OwnableUpgradeable, ReentrancyGuardUpgradeable {
         require(usdAmount > 0, "0 dollar was given");
 
         uint256 araAmount = getAraAmount(round, usdAmount);
-        require(rounds[round].minted + araAmount < rounds[round].cap, "exceeds the cap");
+        // It must be <=
+        require(rounds[round].minted + araAmount <= rounds[round].cap, "exceeds the cap");
 
         if (rounds[round].minUsd > 0) {
             require(usdAmount >= rounds[round].minUsd, "less than minimum");
