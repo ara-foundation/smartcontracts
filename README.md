@@ -20,17 +20,17 @@ npx hardhat run ./scripts/000-deploy-ara-token.js --network NETWORK_NAME
 
 #### Mainnet (Base L2)
 
-- ARA Token deployed to Base network: [0x8fAd4d86b6cc14798882B607cD62fbdc3b5a258c](https://basescan.org/token/0x8fAd4d86b6cc14798882B607cD62fbdc3b5a258c)
+- ARA Token deployed to Base network: [0x040eEE6D8da3092381Bc9DFaB8fD4A0A9D8eEBDa](https://basescan.org/token/0x040eEE6D8da3092381Bc9DFaB8fD4A0A9D8eEBDa)
 
-- MAIN Token deployed to Base network: [0xE20A78EFA6A6f14CE1229f2CF34082ABb78e92Fd](https://basescan.org/token/0xE20A78EFA6A6f14CE1229f2CF34082ABb78e92Fd)
+- MAIN Token deployed to Base network: [0x58035DC04D0c05b43396a2d7436F87E5C9F380f6](https://basescan.org/token/0x58035DC04D0c05b43396a2d7436F87E5C9F380f6)
 
-- Minter of ARA deployed to Base network: [0x72Ed11B14C69D6C9faE5544dE44e2f9E27D1f81C](https://basescan.org/address/0x72Ed11B14C69D6C9faE5544dE44e2f9E27D1f81C)
+- Minter of ARA deployed to Base network: [0x2470aEf262166d338788Fef932dCeCCfdDC60206](https://basescan.org/address/0x2470aEf262166d338788Fef932dCeCCfdDC60206)
 
-- CHECK Token deployed to Base network: [0xD38359e85a064EDF54D4Bc017c92Af2AcDa194Fa](https://basescan.org/token/0xD38359e85a064EDF54D4Bc017c92Af2AcDa194Fa)
+- CHECK Token deployed to Base network: [0x9C0aCC45CEcB50444c0Ce3f29e822fEFF64ff401](https://basescan.org/token/0x9C0aCC45CEcB50444c0Ce3f29e822fEFF64ff401)
 
 ##### Supported Collateral Tokens
 
-- [Tether: USDT Stablecoin](https://basescan.org/token/0xdAC17F958D2ee523a2206206994597C13D831ec7)
+- [Circle USD Stablecoin](https://basescan.org/token/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913)
 - [ETH](https://basescan.org/chart/price)
 
 ### Setup
@@ -47,6 +47,8 @@ Then the minter must accept the collaterals.
    As the `feed` use the [Chainlink PriceFeed address](https://docs.chain.link/data-feeds/price-feeds/addresses?network=ethereum&page=1&search=EH#sepolia-testnet) along with it's decimals. Only those who are paired to the USD.
 
 For the native token use the address(0): `0x0000000000000000000000000000000000000000`.
+
+In the Ara token, grant the Minter a Minter role.
 
 ---
 

@@ -30,6 +30,26 @@
       "address": "0xD38359e85a064EDF54D4Bc017c92Af2AcDa194Fa",
       "txHash": "0x8de012e92f3b50f677058440993894cd2f3178eeca11c546a284c9243f3a4e98",
       "kind": "transparent"
+    },
+    {
+      "address": "0x040eEE6D8da3092381Bc9DFaB8fD4A0A9D8eEBDa",
+      "txHash": "0x5d74f0c0ea9c98c0c522a22f11ad521132726574a25af4c923c84b45f5b22a2f",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x58035DC04D0c05b43396a2d7436F87E5C9F380f6",
+      "txHash": "0xd2c3c74373e6b84cb8a9639a0d36891836aab12d45f11cf8ba6f98c319aaef86",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x2470aEf262166d338788Fef932dCeCCfdDC60206",
+      "txHash": "0x4fb2677908bce9070aaafdcd290c669f9ac6129fc12d56faad7555452bc79802",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x9C0aCC45CEcB50444c0Ce3f29e822fEFF64ff401",
+      "txHash": "0x43592fa4543a62934c27b6bb42c5c9f745a04aa14985ea43a170a8dd6cc462d6",
+      "kind": "transparent"
     }
   ],
   "impls": {
@@ -588,7 +608,7 @@
             "label": "bridgeVoting",
             "offset": 0,
             "slot": "14",
-            "type": "t_struct(BridgeVoting)3948_storage",
+            "type": "t_struct(BridgeVoting)4499_storage",
             "contract": "Minter",
             "src": "contracts\\Minter.sol:61"
           },
@@ -596,7 +616,7 @@
             "label": "collaterals",
             "offset": 0,
             "slot": "20",
-            "type": "t_mapping(t_address,t_struct(Collateral)3922_storage)",
+            "type": "t_mapping(t_address,t_struct(Collateral)4473_storage)",
             "contract": "Minter",
             "src": "contracts\\Minter.sol:63"
           },
@@ -604,7 +624,7 @@
             "label": "rounds",
             "offset": 0,
             "slot": "21",
-            "type": "t_mapping(t_uint8,t_struct(Round)3933_storage)",
+            "type": "t_mapping(t_uint8,t_struct(Round)4484_storage)",
             "contract": "Minter",
             "src": "contracts\\Minter.sol:64"
           },
@@ -620,7 +640,7 @@
             "label": "collateralVotings",
             "offset": 0,
             "slot": "23",
-            "type": "t_mapping(t_address,t_struct(CollateralVoting)3964_storage)",
+            "type": "t_mapping(t_address,t_struct(CollateralVoting)4515_storage)",
             "contract": "Minter",
             "src": "contracts\\Minter.sol:66"
           }
@@ -692,11 +712,11 @@
             "label": "mapping(address => bool)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_address,t_struct(Collateral)3922_storage)": {
+          "t_mapping(t_address,t_struct(Collateral)4473_storage)": {
             "label": "mapping(address => struct Minter.Collateral)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_address,t_struct(CollateralVoting)3964_storage)": {
+          "t_mapping(t_address,t_struct(CollateralVoting)4515_storage)": {
             "label": "mapping(address => struct Minter.CollateralVoting)",
             "numberOfBytes": "32"
           },
@@ -704,11 +724,11 @@
             "label": "mapping(uint8 => address)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint8,t_struct(Round)3933_storage)": {
+          "t_mapping(t_uint8,t_struct(Round)4484_storage)": {
             "label": "mapping(uint8 => struct Minter.Round)",
             "numberOfBytes": "32"
           },
-          "t_struct(BridgeVoting)3948_storage": {
+          "t_struct(BridgeVoting)4499_storage": {
             "label": "struct Minter.BridgeVoting",
             "members": [
               {
@@ -750,7 +770,7 @@
             ],
             "numberOfBytes": "192"
           },
-          "t_struct(Collateral)3922_storage": {
+          "t_struct(Collateral)4473_storage": {
             "label": "struct Minter.Collateral",
             "members": [
               {
@@ -774,12 +794,12 @@
             ],
             "numberOfBytes": "32"
           },
-          "t_struct(CollateralVoting)3964_storage": {
+          "t_struct(CollateralVoting)4515_storage": {
             "label": "struct Minter.CollateralVoting",
             "members": [
               {
                 "label": "params",
-                "type": "t_struct(Collateral)3922_storage",
+                "type": "t_struct(Collateral)4473_storage",
                 "offset": 0,
                 "slot": "0"
               },
@@ -816,7 +836,7 @@
             ],
             "numberOfBytes": "192"
           },
-          "t_struct(Round)3933_storage": {
+          "t_struct(Round)4484_storage": {
             "label": "struct Minter.Round",
             "members": [
               {
@@ -909,7 +929,7 @@
             "label": "ara",
             "offset": 0,
             "slot": "0",
-            "type": "t_contract(IERC20)2132",
+            "type": "t_contract(IERC20)2647",
             "contract": "CHECKToken",
             "src": "contracts\\CHECKToken.sol:22"
           },
@@ -917,7 +937,7 @@
             "label": "main",
             "offset": 0,
             "slot": "1",
-            "type": "t_contract(IERC20)2132",
+            "type": "t_contract(IERC20)2647",
             "contract": "CHECKToken",
             "src": "contracts\\CHECKToken.sol:23"
           },
@@ -925,7 +945,7 @@
             "label": "minter",
             "offset": 0,
             "slot": "2",
-            "type": "t_contract(IMinter)3136",
+            "type": "t_contract(IMinter)3687",
             "contract": "CHECKToken",
             "src": "contracts\\CHECKToken.sol:24"
           },
@@ -941,7 +961,7 @@
             "label": "projects",
             "offset": 0,
             "slot": "4",
-            "type": "t_mapping(t_uint256,t_struct(Project)2295_storage)",
+            "type": "t_mapping(t_uint256,t_struct(Project)2846_storage)",
             "contract": "CHECKToken",
             "src": "contracts\\CHECKToken.sol:46"
           },
@@ -949,7 +969,7 @@
             "label": "newProjectVotings",
             "offset": 0,
             "slot": "5",
-            "type": "t_mapping(t_uint256,t_struct(NewProject)2282_storage)",
+            "type": "t_mapping(t_uint256,t_struct(NewProject)2833_storage)",
             "contract": "CHECKToken",
             "src": "contracts\\CHECKToken.sol:47"
           }
@@ -1037,11 +1057,11 @@
             "label": "uint64",
             "numberOfBytes": "8"
           },
-          "t_contract(IERC20)2132": {
+          "t_contract(IERC20)2647": {
             "label": "contract IERC20",
             "numberOfBytes": "20"
           },
-          "t_contract(IMinter)3136": {
+          "t_contract(IMinter)3687": {
             "label": "contract IMinter",
             "numberOfBytes": "20"
           },
@@ -1049,20 +1069,20 @@
             "label": "mapping(address => bool)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_struct(NewProject)2282_storage)": {
+          "t_mapping(t_uint256,t_struct(NewProject)2833_storage)": {
             "label": "mapping(uint256 => struct CHECKToken.NewProject)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_struct(Project)2295_storage)": {
+          "t_mapping(t_uint256,t_struct(Project)2846_storage)": {
             "label": "mapping(uint256 => struct CHECKToken.Project)",
             "numberOfBytes": "32"
           },
-          "t_struct(NewProject)2282_storage": {
+          "t_struct(NewProject)2833_storage": {
             "label": "struct CHECKToken.NewProject",
             "members": [
               {
                 "label": "params",
-                "type": "t_struct(Project)2295_storage",
+                "type": "t_struct(Project)2846_storage",
                 "offset": 0,
                 "slot": "0"
               },
@@ -1099,7 +1119,4014 @@
             ],
             "numberOfBytes": "352"
           },
-          "t_struct(Project)2295_storage": {
+          "t_struct(Project)2846_storage": {
+            "label": "struct CHECKToken.Project",
+            "members": [
+              {
+                "label": "maintainer",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "period",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "startTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "cancelled",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.ERC20": [
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_balances",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:38",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_allowances",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:40",
+              "offset": 0,
+              "slot": "1"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:42",
+              "offset": 0,
+              "slot": "2"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_name",
+              "type": "t_string_storage",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:44",
+              "offset": 0,
+              "slot": "3"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_symbol",
+              "type": "t_string_storage",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:45",
+              "offset": 0,
+              "slot": "4"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "cc2293356e50bb665e836c36a25b7abff9eb827d4c80a882210e303b6ffb68c4": {
+      "address": "0x404cBb17d7Da06981D3884AB39466d1C1B85942a",
+      "txHash": "0x0237aa4c2ad824cae63395b88a4eeffe50296b96327c446ef7feb665f7699078",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "noBridgeEndTime",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:54"
+          },
+          {
+            "label": "bridge",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:55"
+          },
+          {
+            "label": "araToken",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:56"
+          },
+          {
+            "label": "checkToken",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:57"
+          },
+          {
+            "label": "mainToken",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:58"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:59"
+          },
+          {
+            "label": "vestingContracts",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_array(t_address)8_storage",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:60"
+          },
+          {
+            "label": "bridgeVoting",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_struct(BridgeVoting)844_storage",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:61"
+          },
+          {
+            "label": "collaterals",
+            "offset": 0,
+            "slot": "20",
+            "type": "t_mapping(t_address,t_struct(Collateral)818_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:63"
+          },
+          {
+            "label": "rounds",
+            "offset": 0,
+            "slot": "21",
+            "type": "t_mapping(t_uint8,t_struct(Round)829_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:64"
+          },
+          {
+            "label": "vestings",
+            "offset": 0,
+            "slot": "22",
+            "type": "t_mapping(t_uint8,t_address)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:65"
+          },
+          {
+            "label": "collateralVotings",
+            "offset": 0,
+            "slot": "23",
+            "type": "t_mapping(t_address,t_struct(CollateralVoting)860_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:66"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)78_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)27_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)153_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)8_storage": {
+            "label": "address[8]",
+            "numberOfBytes": "256"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Collateral)818_storage)": {
+            "label": "mapping(address => struct Minter.Collateral)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(CollateralVoting)860_storage)": {
+            "label": "mapping(address => struct Minter.CollateralVoting)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_address)": {
+            "label": "mapping(uint8 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_struct(Round)829_storage)": {
+            "label": "mapping(uint8 => struct Minter.Round)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(BridgeVoting)844_storage": {
+            "label": "struct Minter.BridgeVoting",
+            "members": [
+              {
+                "label": "bridge",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(Collateral)818_storage": {
+            "label": "struct Minter.Collateral",
+            "members": [
+              {
+                "label": "feedDecimals",
+                "type": "t_uint8",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "tokenDecimals",
+                "type": "t_uint8",
+                "offset": 1,
+                "slot": "0"
+              },
+              {
+                "label": "feedAddr",
+                "type": "t_address",
+                "offset": 2,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(CollateralVoting)860_storage": {
+            "label": "struct Minter.CollateralVoting",
+            "members": [
+              {
+                "label": "params",
+                "type": "t_struct(Collateral)818_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(Round)829_storage": {
+            "label": "struct Minter.Round",
+            "members": [
+              {
+                "label": "cap",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "pricePerToken",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "minUsd",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "maxUsd",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin\\contracts-upgradeable\\utils\\ReentrancyGuardUpgradeable.sol:40",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "511ad15d8cafd47e2095add49aff680fe3ed09dcc29b20594db2243814104c4c": {
+      "address": "0x7dc6B6A0B780aeB895936a1ED19ee46CC69a2397",
+      "txHash": "0x57433aa2127c2f58a31f556e3cd14788a07b4af2cf8a8cf7f86f2a974a95e787",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "noBridgeEndTime",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:54"
+          },
+          {
+            "label": "bridge",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:55"
+          },
+          {
+            "label": "araToken",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:56"
+          },
+          {
+            "label": "checkToken",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:57"
+          },
+          {
+            "label": "mainToken",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:58"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:59"
+          },
+          {
+            "label": "vestingContracts",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_array(t_address)8_storage",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:60"
+          },
+          {
+            "label": "bridgeVoting",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_struct(BridgeVoting)844_storage",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:61"
+          },
+          {
+            "label": "collaterals",
+            "offset": 0,
+            "slot": "20",
+            "type": "t_mapping(t_address,t_struct(Collateral)818_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:63"
+          },
+          {
+            "label": "rounds",
+            "offset": 0,
+            "slot": "21",
+            "type": "t_mapping(t_uint8,t_struct(Round)829_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:64"
+          },
+          {
+            "label": "vestings",
+            "offset": 0,
+            "slot": "22",
+            "type": "t_mapping(t_uint8,t_address)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:65"
+          },
+          {
+            "label": "collateralVotings",
+            "offset": 0,
+            "slot": "23",
+            "type": "t_mapping(t_address,t_struct(CollateralVoting)860_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:66"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)78_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)27_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)153_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)8_storage": {
+            "label": "address[8]",
+            "numberOfBytes": "256"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Collateral)818_storage)": {
+            "label": "mapping(address => struct Minter.Collateral)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(CollateralVoting)860_storage)": {
+            "label": "mapping(address => struct Minter.CollateralVoting)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_address)": {
+            "label": "mapping(uint8 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_struct(Round)829_storage)": {
+            "label": "mapping(uint8 => struct Minter.Round)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(BridgeVoting)844_storage": {
+            "label": "struct Minter.BridgeVoting",
+            "members": [
+              {
+                "label": "bridge",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(Collateral)818_storage": {
+            "label": "struct Minter.Collateral",
+            "members": [
+              {
+                "label": "feedDecimals",
+                "type": "t_uint8",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "tokenDecimals",
+                "type": "t_uint8",
+                "offset": 1,
+                "slot": "0"
+              },
+              {
+                "label": "feedAddr",
+                "type": "t_address",
+                "offset": 2,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(CollateralVoting)860_storage": {
+            "label": "struct Minter.CollateralVoting",
+            "members": [
+              {
+                "label": "params",
+                "type": "t_struct(Collateral)818_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(Round)829_storage": {
+            "label": "struct Minter.Round",
+            "members": [
+              {
+                "label": "cap",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "pricePerToken",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "minUsd",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "maxUsd",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin\\contracts-upgradeable\\utils\\ReentrancyGuardUpgradeable.sol:40",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "d217cbdc6059f923c9c135661c013ef42a8fc2fa57aac9ec128458d5ad211455": {
+      "address": "0xd38D0B3c57570aAc07250DcfE78bA2E03b383792",
+      "txHash": "0x62f5cbce94c303363140b213410b322881a9d347920ed9bb33b06da7327df3c6",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "noBridgeEndTime",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:54"
+          },
+          {
+            "label": "bridge",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:55"
+          },
+          {
+            "label": "araToken",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:56"
+          },
+          {
+            "label": "checkToken",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:57"
+          },
+          {
+            "label": "mainToken",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:58"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:59"
+          },
+          {
+            "label": "vestingContracts",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_array(t_address)8_storage",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:60"
+          },
+          {
+            "label": "bridgeVoting",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_struct(BridgeVoting)844_storage",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:61"
+          },
+          {
+            "label": "collaterals",
+            "offset": 0,
+            "slot": "20",
+            "type": "t_mapping(t_address,t_struct(Collateral)818_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:63"
+          },
+          {
+            "label": "rounds",
+            "offset": 0,
+            "slot": "21",
+            "type": "t_mapping(t_uint8,t_struct(Round)829_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:64"
+          },
+          {
+            "label": "vestings",
+            "offset": 0,
+            "slot": "22",
+            "type": "t_mapping(t_uint8,t_address)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:65"
+          },
+          {
+            "label": "collateralVotings",
+            "offset": 0,
+            "slot": "23",
+            "type": "t_mapping(t_address,t_struct(CollateralVoting)860_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:66"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)78_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)27_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)153_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)8_storage": {
+            "label": "address[8]",
+            "numberOfBytes": "256"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Collateral)818_storage)": {
+            "label": "mapping(address => struct Minter.Collateral)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(CollateralVoting)860_storage)": {
+            "label": "mapping(address => struct Minter.CollateralVoting)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_address)": {
+            "label": "mapping(uint8 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_struct(Round)829_storage)": {
+            "label": "mapping(uint8 => struct Minter.Round)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(BridgeVoting)844_storage": {
+            "label": "struct Minter.BridgeVoting",
+            "members": [
+              {
+                "label": "bridge",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(Collateral)818_storage": {
+            "label": "struct Minter.Collateral",
+            "members": [
+              {
+                "label": "feedDecimals",
+                "type": "t_uint8",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "tokenDecimals",
+                "type": "t_uint8",
+                "offset": 1,
+                "slot": "0"
+              },
+              {
+                "label": "feedAddr",
+                "type": "t_address",
+                "offset": 2,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(CollateralVoting)860_storage": {
+            "label": "struct Minter.CollateralVoting",
+            "members": [
+              {
+                "label": "params",
+                "type": "t_struct(Collateral)818_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(Round)829_storage": {
+            "label": "struct Minter.Round",
+            "members": [
+              {
+                "label": "cap",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "pricePerToken",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "minUsd",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "maxUsd",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin\\contracts-upgradeable\\utils\\ReentrancyGuardUpgradeable.sol:40",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "2078773f32cf62d33e430619e2baca8a3700f053707e5974798410ca5fc2ebce": {
+      "address": "0x55D2753E9bd88A2d54EA934AC7105089Eb6632F4",
+      "txHash": "0x061e73dcc13ae1755fcbcabeb93b6c47c105fa0044bb494cd540465ef29bc972",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "noBridgeEndTime",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:54"
+          },
+          {
+            "label": "bridge",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:55"
+          },
+          {
+            "label": "araToken",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:56"
+          },
+          {
+            "label": "checkToken",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:57"
+          },
+          {
+            "label": "mainToken",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:58"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:59"
+          },
+          {
+            "label": "vestingContracts",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_array(t_address)8_storage",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:60"
+          },
+          {
+            "label": "bridgeVoting",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_struct(BridgeVoting)844_storage",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:61"
+          },
+          {
+            "label": "collaterals",
+            "offset": 0,
+            "slot": "20",
+            "type": "t_mapping(t_address,t_struct(Collateral)818_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:63"
+          },
+          {
+            "label": "rounds",
+            "offset": 0,
+            "slot": "21",
+            "type": "t_mapping(t_uint8,t_struct(Round)829_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:64"
+          },
+          {
+            "label": "vestings",
+            "offset": 0,
+            "slot": "22",
+            "type": "t_mapping(t_uint8,t_address)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:65"
+          },
+          {
+            "label": "collateralVotings",
+            "offset": 0,
+            "slot": "23",
+            "type": "t_mapping(t_address,t_struct(CollateralVoting)860_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:66"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)78_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)27_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)153_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)8_storage": {
+            "label": "address[8]",
+            "numberOfBytes": "256"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Collateral)818_storage)": {
+            "label": "mapping(address => struct Minter.Collateral)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(CollateralVoting)860_storage)": {
+            "label": "mapping(address => struct Minter.CollateralVoting)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_address)": {
+            "label": "mapping(uint8 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_struct(Round)829_storage)": {
+            "label": "mapping(uint8 => struct Minter.Round)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(BridgeVoting)844_storage": {
+            "label": "struct Minter.BridgeVoting",
+            "members": [
+              {
+                "label": "bridge",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(Collateral)818_storage": {
+            "label": "struct Minter.Collateral",
+            "members": [
+              {
+                "label": "feedDecimals",
+                "type": "t_uint8",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "tokenDecimals",
+                "type": "t_uint8",
+                "offset": 1,
+                "slot": "0"
+              },
+              {
+                "label": "feedAddr",
+                "type": "t_address",
+                "offset": 2,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(CollateralVoting)860_storage": {
+            "label": "struct Minter.CollateralVoting",
+            "members": [
+              {
+                "label": "params",
+                "type": "t_struct(Collateral)818_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(Round)829_storage": {
+            "label": "struct Minter.Round",
+            "members": [
+              {
+                "label": "cap",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "pricePerToken",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "minUsd",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "maxUsd",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin\\contracts-upgradeable\\utils\\ReentrancyGuardUpgradeable.sol:40",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "965f373819d3ee1a4c4d13cfa806e2e5e1c11b3230fd1bc79d3a75bcf3605e2f": {
+      "address": "0x95405055D584a926A066f010A11Cd49254D5232b",
+      "txHash": "0xe6d99f5b9f833553e1f3f70888fba57311ac9d2b23c53c8d5672dfab4cf01fd7",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "noBridgeEndTime",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:54"
+          },
+          {
+            "label": "bridge",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:55"
+          },
+          {
+            "label": "araToken",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:56"
+          },
+          {
+            "label": "checkToken",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:57"
+          },
+          {
+            "label": "mainToken",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:58"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:59"
+          },
+          {
+            "label": "vestingContracts",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_array(t_address)8_storage",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:60"
+          },
+          {
+            "label": "bridgeVoting",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_struct(BridgeVoting)844_storage",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:61"
+          },
+          {
+            "label": "collaterals",
+            "offset": 0,
+            "slot": "20",
+            "type": "t_mapping(t_address,t_struct(Collateral)818_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:63"
+          },
+          {
+            "label": "rounds",
+            "offset": 0,
+            "slot": "21",
+            "type": "t_mapping(t_uint8,t_struct(Round)829_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:64"
+          },
+          {
+            "label": "vestings",
+            "offset": 0,
+            "slot": "22",
+            "type": "t_mapping(t_uint8,t_address)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:65"
+          },
+          {
+            "label": "collateralVotings",
+            "offset": 0,
+            "slot": "23",
+            "type": "t_mapping(t_address,t_struct(CollateralVoting)860_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:66"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)78_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)27_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)153_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)8_storage": {
+            "label": "address[8]",
+            "numberOfBytes": "256"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Collateral)818_storage)": {
+            "label": "mapping(address => struct Minter.Collateral)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(CollateralVoting)860_storage)": {
+            "label": "mapping(address => struct Minter.CollateralVoting)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_address)": {
+            "label": "mapping(uint8 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_struct(Round)829_storage)": {
+            "label": "mapping(uint8 => struct Minter.Round)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(BridgeVoting)844_storage": {
+            "label": "struct Minter.BridgeVoting",
+            "members": [
+              {
+                "label": "bridge",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(Collateral)818_storage": {
+            "label": "struct Minter.Collateral",
+            "members": [
+              {
+                "label": "feedDecimals",
+                "type": "t_uint8",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "tokenDecimals",
+                "type": "t_uint8",
+                "offset": 1,
+                "slot": "0"
+              },
+              {
+                "label": "feedAddr",
+                "type": "t_address",
+                "offset": 2,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(CollateralVoting)860_storage": {
+            "label": "struct Minter.CollateralVoting",
+            "members": [
+              {
+                "label": "params",
+                "type": "t_struct(Collateral)818_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(Round)829_storage": {
+            "label": "struct Minter.Round",
+            "members": [
+              {
+                "label": "cap",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "pricePerToken",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "minUsd",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "maxUsd",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin\\contracts-upgradeable\\utils\\ReentrancyGuardUpgradeable.sol:40",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "9846d556d7933a369e85bab5b4f2114cf7e33b974e961f5cbbf160c7d8f60de2": {
+      "address": "0x9396cC15674dEFDF12f77624a757f52B4Cd672D7",
+      "txHash": "0xbec79aadc7fefb4d2bde73f60bb1603b02927a6fb6fa45dba98346b05928c3ee",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "noBridgeEndTime",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:54"
+          },
+          {
+            "label": "bridge",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:55"
+          },
+          {
+            "label": "araToken",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:56"
+          },
+          {
+            "label": "checkToken",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:57"
+          },
+          {
+            "label": "mainToken",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:58"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:59"
+          },
+          {
+            "label": "vestingContracts",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_array(t_address)8_storage",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:60"
+          },
+          {
+            "label": "bridgeVoting",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_struct(BridgeVoting)844_storage",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:61"
+          },
+          {
+            "label": "collaterals",
+            "offset": 0,
+            "slot": "20",
+            "type": "t_mapping(t_address,t_struct(Collateral)818_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:63"
+          },
+          {
+            "label": "rounds",
+            "offset": 0,
+            "slot": "21",
+            "type": "t_mapping(t_uint8,t_struct(Round)829_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:64"
+          },
+          {
+            "label": "vestings",
+            "offset": 0,
+            "slot": "22",
+            "type": "t_mapping(t_uint8,t_address)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:65"
+          },
+          {
+            "label": "collateralVotings",
+            "offset": 0,
+            "slot": "23",
+            "type": "t_mapping(t_address,t_struct(CollateralVoting)860_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:66"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)78_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)27_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)153_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)8_storage": {
+            "label": "address[8]",
+            "numberOfBytes": "256"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Collateral)818_storage)": {
+            "label": "mapping(address => struct Minter.Collateral)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(CollateralVoting)860_storage)": {
+            "label": "mapping(address => struct Minter.CollateralVoting)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_address)": {
+            "label": "mapping(uint8 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_struct(Round)829_storage)": {
+            "label": "mapping(uint8 => struct Minter.Round)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(BridgeVoting)844_storage": {
+            "label": "struct Minter.BridgeVoting",
+            "members": [
+              {
+                "label": "bridge",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(Collateral)818_storage": {
+            "label": "struct Minter.Collateral",
+            "members": [
+              {
+                "label": "feedDecimals",
+                "type": "t_uint8",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "tokenDecimals",
+                "type": "t_uint8",
+                "offset": 1,
+                "slot": "0"
+              },
+              {
+                "label": "feedAddr",
+                "type": "t_address",
+                "offset": 2,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(CollateralVoting)860_storage": {
+            "label": "struct Minter.CollateralVoting",
+            "members": [
+              {
+                "label": "params",
+                "type": "t_struct(Collateral)818_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(Round)829_storage": {
+            "label": "struct Minter.Round",
+            "members": [
+              {
+                "label": "cap",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "pricePerToken",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "minUsd",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "maxUsd",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin\\contracts-upgradeable\\utils\\ReentrancyGuardUpgradeable.sol:40",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "9a76e557f208bae90c8fe75a55e52dab6f7ae27a3c2b7db5469a54a163703e40": {
+      "address": "0x76AE0796675a66563bf5C2B14D9080E7109B8dAf",
+      "txHash": "0xa991a15f1b116b518e7c3c6c67dc796d64142536f11386e4158c6e8561432382",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "noBridgeEndTime",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:54"
+          },
+          {
+            "label": "bridge",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:55"
+          },
+          {
+            "label": "araToken",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:56"
+          },
+          {
+            "label": "checkToken",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:57"
+          },
+          {
+            "label": "mainToken",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:58"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:59"
+          },
+          {
+            "label": "vestingContracts",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_array(t_address)8_storage",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:60"
+          },
+          {
+            "label": "bridgeVoting",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_struct(BridgeVoting)844_storage",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:61"
+          },
+          {
+            "label": "collaterals",
+            "offset": 0,
+            "slot": "20",
+            "type": "t_mapping(t_address,t_struct(Collateral)818_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:63"
+          },
+          {
+            "label": "rounds",
+            "offset": 0,
+            "slot": "21",
+            "type": "t_mapping(t_uint8,t_struct(Round)829_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:64"
+          },
+          {
+            "label": "vestings",
+            "offset": 0,
+            "slot": "22",
+            "type": "t_mapping(t_uint8,t_address)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:65"
+          },
+          {
+            "label": "collateralVotings",
+            "offset": 0,
+            "slot": "23",
+            "type": "t_mapping(t_address,t_struct(CollateralVoting)860_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:66"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)78_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)27_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)153_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)8_storage": {
+            "label": "address[8]",
+            "numberOfBytes": "256"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Collateral)818_storage)": {
+            "label": "mapping(address => struct Minter.Collateral)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(CollateralVoting)860_storage)": {
+            "label": "mapping(address => struct Minter.CollateralVoting)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_address)": {
+            "label": "mapping(uint8 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_struct(Round)829_storage)": {
+            "label": "mapping(uint8 => struct Minter.Round)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(BridgeVoting)844_storage": {
+            "label": "struct Minter.BridgeVoting",
+            "members": [
+              {
+                "label": "bridge",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(Collateral)818_storage": {
+            "label": "struct Minter.Collateral",
+            "members": [
+              {
+                "label": "feedDecimals",
+                "type": "t_uint8",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "tokenDecimals",
+                "type": "t_uint8",
+                "offset": 1,
+                "slot": "0"
+              },
+              {
+                "label": "feedAddr",
+                "type": "t_address",
+                "offset": 2,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(CollateralVoting)860_storage": {
+            "label": "struct Minter.CollateralVoting",
+            "members": [
+              {
+                "label": "params",
+                "type": "t_struct(Collateral)818_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(Round)829_storage": {
+            "label": "struct Minter.Round",
+            "members": [
+              {
+                "label": "cap",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "pricePerToken",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "minUsd",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "maxUsd",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin\\contracts-upgradeable\\utils\\ReentrancyGuardUpgradeable.sol:40",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "81502bf04cd666a9db5f9f96469ed52dfdc0c730037faac52b51445cfeab72c6": {
+      "address": "0xE9694Df0f3db71c04E6c4562e94B9c8731A2dCdf",
+      "txHash": "0x5f8cfed9d1396621e030f03129d0609ea0a11fd8a77112a94a014b19a26e5dc9",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "noBridgeEndTime",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:54"
+          },
+          {
+            "label": "bridge",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:55"
+          },
+          {
+            "label": "araToken",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:56"
+          },
+          {
+            "label": "checkToken",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:57"
+          },
+          {
+            "label": "mainToken",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:58"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:59"
+          },
+          {
+            "label": "vestingContracts",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_array(t_address)8_storage",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:60"
+          },
+          {
+            "label": "bridgeVoting",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_struct(BridgeVoting)844_storage",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:61"
+          },
+          {
+            "label": "collaterals",
+            "offset": 0,
+            "slot": "20",
+            "type": "t_mapping(t_address,t_struct(Collateral)818_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:63"
+          },
+          {
+            "label": "rounds",
+            "offset": 0,
+            "slot": "21",
+            "type": "t_mapping(t_uint8,t_struct(Round)829_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:64"
+          },
+          {
+            "label": "vestings",
+            "offset": 0,
+            "slot": "22",
+            "type": "t_mapping(t_uint8,t_address)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:65"
+          },
+          {
+            "label": "collateralVotings",
+            "offset": 0,
+            "slot": "23",
+            "type": "t_mapping(t_address,t_struct(CollateralVoting)860_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:66"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)78_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)27_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)153_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)8_storage": {
+            "label": "address[8]",
+            "numberOfBytes": "256"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Collateral)818_storage)": {
+            "label": "mapping(address => struct Minter.Collateral)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(CollateralVoting)860_storage)": {
+            "label": "mapping(address => struct Minter.CollateralVoting)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_address)": {
+            "label": "mapping(uint8 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_struct(Round)829_storage)": {
+            "label": "mapping(uint8 => struct Minter.Round)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(BridgeVoting)844_storage": {
+            "label": "struct Minter.BridgeVoting",
+            "members": [
+              {
+                "label": "bridge",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(Collateral)818_storage": {
+            "label": "struct Minter.Collateral",
+            "members": [
+              {
+                "label": "feedDecimals",
+                "type": "t_uint8",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "tokenDecimals",
+                "type": "t_uint8",
+                "offset": 1,
+                "slot": "0"
+              },
+              {
+                "label": "feedAddr",
+                "type": "t_address",
+                "offset": 2,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(CollateralVoting)860_storage": {
+            "label": "struct Minter.CollateralVoting",
+            "members": [
+              {
+                "label": "params",
+                "type": "t_struct(Collateral)818_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(Round)829_storage": {
+            "label": "struct Minter.Round",
+            "members": [
+              {
+                "label": "cap",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "pricePerToken",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "minUsd",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "maxUsd",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin\\contracts-upgradeable\\utils\\ReentrancyGuardUpgradeable.sol:40",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "4283c802e96e01c50a676faf4f082cfee7815b504d69d9fdc3004b69cf41c9e9": {
+      "address": "0x98F722C10284e54FCa49674E61E0889828dA56fB",
+      "txHash": "0x6a144f33fa886a6a81093623737cea0a9fb5abf278b9604d920eb980add99375",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "noBridgeEndTime",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:54"
+          },
+          {
+            "label": "bridge",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:55"
+          },
+          {
+            "label": "araToken",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:56"
+          },
+          {
+            "label": "checkToken",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:57"
+          },
+          {
+            "label": "mainToken",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:58"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:59"
+          },
+          {
+            "label": "vestingContracts",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_array(t_address)8_storage",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:60"
+          },
+          {
+            "label": "bridgeVoting",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_struct(BridgeVoting)844_storage",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:61"
+          },
+          {
+            "label": "collaterals",
+            "offset": 0,
+            "slot": "20",
+            "type": "t_mapping(t_address,t_struct(Collateral)818_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:63"
+          },
+          {
+            "label": "rounds",
+            "offset": 0,
+            "slot": "21",
+            "type": "t_mapping(t_uint8,t_struct(Round)829_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:64"
+          },
+          {
+            "label": "vestings",
+            "offset": 0,
+            "slot": "22",
+            "type": "t_mapping(t_uint8,t_address)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:65"
+          },
+          {
+            "label": "collateralVotings",
+            "offset": 0,
+            "slot": "23",
+            "type": "t_mapping(t_address,t_struct(CollateralVoting)860_storage)",
+            "contract": "Minter",
+            "src": "contracts\\Minter.sol:66"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)78_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)27_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)153_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)8_storage": {
+            "label": "address[8]",
+            "numberOfBytes": "256"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Collateral)818_storage)": {
+            "label": "mapping(address => struct Minter.Collateral)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(CollateralVoting)860_storage)": {
+            "label": "mapping(address => struct Minter.CollateralVoting)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_address)": {
+            "label": "mapping(uint8 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_struct(Round)829_storage)": {
+            "label": "mapping(uint8 => struct Minter.Round)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(BridgeVoting)844_storage": {
+            "label": "struct Minter.BridgeVoting",
+            "members": [
+              {
+                "label": "bridge",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(Collateral)818_storage": {
+            "label": "struct Minter.Collateral",
+            "members": [
+              {
+                "label": "feedDecimals",
+                "type": "t_uint8",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "tokenDecimals",
+                "type": "t_uint8",
+                "offset": 1,
+                "slot": "0"
+              },
+              {
+                "label": "feedAddr",
+                "type": "t_address",
+                "offset": 2,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(CollateralVoting)860_storage": {
+            "label": "struct Minter.CollateralVoting",
+            "members": [
+              {
+                "label": "params",
+                "type": "t_struct(Collateral)818_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(Round)829_storage": {
+            "label": "struct Minter.Round",
+            "members": [
+              {
+                "label": "cap",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "pricePerToken",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "minUsd",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "maxUsd",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin\\contracts-upgradeable\\utils\\ReentrancyGuardUpgradeable.sol:40",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "d10233c26b0c96595d473c05e9d783e39fed154d69c6e40f4a052ec7c9925532": {
+      "address": "0xf9f2D0c75BEFb0183835bD0a1dbdF7A022FE0e0F",
+      "txHash": "0x30711cfcdad37273fe6803ea56295c8aa624f20c119db73397a6949e09c3c2de",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "ara",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(ERC20)1568",
+            "contract": "CHECKToken",
+            "src": "contracts\\CHECKToken.sol:22"
+          },
+          {
+            "label": "main",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_contract(ERC20)1568",
+            "contract": "CHECKToken",
+            "src": "contracts\\CHECKToken.sol:23"
+          },
+          {
+            "label": "minter",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_contract(IMinter)2600",
+            "contract": "CHECKToken",
+            "src": "contracts\\CHECKToken.sol:24"
+          },
+          {
+            "label": "projectId",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "CHECKToken",
+            "src": "contracts\\CHECKToken.sol:44"
+          },
+          {
+            "label": "projects",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint256,t_struct(Project)1762_storage)",
+            "contract": "CHECKToken",
+            "src": "contracts\\CHECKToken.sol:46"
+          },
+          {
+            "label": "newProjectVotings",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint256,t_struct(NewProject)1749_storage)",
+            "contract": "CHECKToken",
+            "src": "contracts\\CHECKToken.sol:47"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(ERC20Storage)91_storage": {
+            "label": "struct ERC20Upgradeable.ERC20Storage",
+            "members": [
+              {
+                "label": "_balances",
+                "type": "t_mapping(t_address,t_uint256)",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_allowances",
+                "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "_totalSupply",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "_name",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "_symbol",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_struct(InitializableStorage)10_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_contract(ERC20)1568": {
+            "label": "contract ERC20",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IMinter)2600": {
+            "label": "contract IMinter",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(NewProject)1749_storage)": {
+            "label": "mapping(uint256 => struct CHECKToken.NewProject)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Project)1762_storage)": {
+            "label": "mapping(uint256 => struct CHECKToken.Project)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(NewProject)1749_storage": {
+            "label": "struct CHECKToken.NewProject",
+            "members": [
+              {
+                "label": "params",
+                "type": "t_struct(Project)1762_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "8"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "9"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "10"
+              }
+            ],
+            "numberOfBytes": "352"
+          },
+          "t_struct(Project)1762_storage": {
+            "label": "struct CHECKToken.Project",
+            "members": [
+              {
+                "label": "maintainer",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "period",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "startTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "cancelled",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.ERC20": [
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_balances",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:38",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_allowances",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:40",
+              "offset": 0,
+              "slot": "1"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:42",
+              "offset": 0,
+              "slot": "2"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_name",
+              "type": "t_string_storage",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:44",
+              "offset": 0,
+              "slot": "3"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_symbol",
+              "type": "t_string_storage",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:45",
+              "offset": 0,
+              "slot": "4"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "9f0f058446758e910716a0849d93d80ba94bdf6690d10a05916735ee72bc8a6d": {
+      "address": "0x72225661CE951dDb1558685D55146dDbb38bc921",
+      "txHash": "0xd4e9d7e2bd0965e6eba576b7a91b7a28ce42ad7e62223064f15b92f6ca586bb3",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "ara",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(ERC20)1568",
+            "contract": "CHECKToken",
+            "src": "contracts\\CHECKToken.sol:22"
+          },
+          {
+            "label": "main",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_contract(ERC20)1568",
+            "contract": "CHECKToken",
+            "src": "contracts\\CHECKToken.sol:23"
+          },
+          {
+            "label": "minter",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_contract(IMinter)2625",
+            "contract": "CHECKToken",
+            "src": "contracts\\CHECKToken.sol:24"
+          },
+          {
+            "label": "projectId",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "CHECKToken",
+            "src": "contracts\\CHECKToken.sol:44"
+          },
+          {
+            "label": "projects",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint256,t_struct(Project)1762_storage)",
+            "contract": "CHECKToken",
+            "src": "contracts\\CHECKToken.sol:46"
+          },
+          {
+            "label": "newProjectVotings",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint256,t_struct(NewProject)1749_storage)",
+            "contract": "CHECKToken",
+            "src": "contracts\\CHECKToken.sol:47"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(ERC20Storage)91_storage": {
+            "label": "struct ERC20Upgradeable.ERC20Storage",
+            "members": [
+              {
+                "label": "_balances",
+                "type": "t_mapping(t_address,t_uint256)",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_allowances",
+                "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "_totalSupply",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "_name",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "_symbol",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_struct(InitializableStorage)10_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_contract(ERC20)1568": {
+            "label": "contract ERC20",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IMinter)2625": {
+            "label": "contract IMinter",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(NewProject)1749_storage)": {
+            "label": "mapping(uint256 => struct CHECKToken.NewProject)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Project)1762_storage)": {
+            "label": "mapping(uint256 => struct CHECKToken.Project)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(NewProject)1749_storage": {
+            "label": "struct CHECKToken.NewProject",
+            "members": [
+              {
+                "label": "params",
+                "type": "t_struct(Project)1762_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "8"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "9"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "10"
+              }
+            ],
+            "numberOfBytes": "352"
+          },
+          "t_struct(Project)1762_storage": {
             "label": "struct CHECKToken.Project",
             "members": [
               {
