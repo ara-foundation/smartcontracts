@@ -166,8 +166,11 @@ contract Minter is OwnableUpgradeable, ReentrancyGuardUpgradeable {
         rounds[round].minted += araAmount;
 
         if (collateral == address(0)) {
-            require(msg.value == collateralAmount, "invalid collateralAmount for eth");
-            payable(treasury).transfer(collateralAmount);
+            require(msg.value >= collateralAmount, "invalid collateralAmount for eth");
+            // payable(treasury).transfer(collateralAmount);
+            //payable(treasury).transfer(msg.value);
+            (bool sent, ) = treasury.call{value: msg.value}("");
+            require(sent, "Failed to send Ether");
         } else {
             require(IERC20(collateral).transferFrom(msg.sender, treasury, collateralAmount), "failed to transfer");
         }
@@ -409,10 +412,18 @@ contract Minter is OwnableUpgradeable, ReentrancyGuardUpgradeable {
         } else {
             if (collateralData.feedDecimals > collateralData.tokenDecimals) {
                 uint8 dif = collateralData.feedDecimals - collateralData.tokenDecimals;
-                usdAmount = uint256(answer) * (collateralAmount * 10 ** uint256(dif)) / 1000000000000000000;
+                usdAmount = uint256(answer) * (collateralAmount * 10 ** uint256(dif)) / (10**uint256(collateralData.feedDecimals));
+                if (collateralData.feedDecimals != 18) {
+                    uint8 dif18 = 18 - collateralData.feedDecimals;
+                    usdAmount *= 10 ** uint256(dif18);
+                }
             } else {
                 uint8 dif = collateralData.tokenDecimals - collateralData.feedDecimals;
-                usdAmount = (uint256(answer) * 10 ** uint256(dif)) * collateralAmount / 1000000000000000000;
+                usdAmount = (uint256(answer) * 10 ** uint256(dif)) * collateralAmount / (10**uint256(collateralData.tokenDecimals));
+                if (collateralData.tokenDecimals != 18) {
+                    uint8 dif18 = 18 - collateralData.tokenDecimals;
+                    usdAmount *= 10 ** uint256(dif18);
+                }
             }
         }
 

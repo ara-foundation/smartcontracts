@@ -4,7 +4,7 @@ pragma solidity ^0.8.20;
 
 import {ERC20Upgradeable} from "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol";
 
-import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import {IMAINToken} from "./IMAINToken.sol";
 import {IMinter} from "./IMinter.sol";
 
@@ -19,8 +19,8 @@ contract CHECKToken is ERC20Upgradeable {
       uint256 public constant LIMIT = 2592000;
       uint256 public constant HALF_SUPPLY = 37500000000000000000000000;
 
-      IERC20 public ara;
-      IERC20 public main;
+      ERC20 public ara;
+      ERC20 public main;
       IMinter public minter;
 
       struct NewProject {
@@ -74,8 +74,8 @@ contract CHECKToken is ERC20Upgradeable {
 
       function initialize(address ara_, address main_, address minter_) initializer public {
         __ERC20_init("Ara Check", "CHECK");
-        ara = IERC20(ara_);
-        main = IERC20(main_);
+        ara = ERC20(ara_);
+        main = ERC20(main_);
         minter = IMinter(minter_);
       }
 
@@ -116,7 +116,7 @@ contract CHECKToken is ERC20Upgradeable {
       }
 
       function newProjectInit(address projectLeader, uint256 period, uint256 budget) public onlyLeader returns (uint256) {
-        require(IERC20(main).balanceOf(projectLeader) > 0, "project leader is not a maintainer");
+        require(ERC20(main).balanceOf(projectLeader) > 0, "project leader is not a maintainer");
         require(period > 86400, "at least a day");
         require(budget > 0, "0 budget");
 
@@ -139,7 +139,7 @@ contract CHECKToken is ERC20Upgradeable {
         require(thisProject.timeStart + REVOKE_PERIOD > block.timestamp
         || thisProject.actionTaken == false, "voting finished");
 
-        uint256 userBalance = IERC20(ara).balanceOf(msg.sender);
+        uint256 userBalance = ERC20(ara).balanceOf(msg.sender);
 
         if (agree) {
           thisProject.countYes += userBalance;
@@ -185,16 +185,25 @@ contract CHECKToken is ERC20Upgradeable {
         require(balanceOf(msg.sender) >= amount, "not enough tokens");
         require(minter.isCollateral(collateral), "invalid address");
 
-        uint256 usdAmount = minter.getUsdAmount(1000000000000000000, collateral);
+        uint256 oneToken = 1000000000000000000;
+        if (collateral != address(0)) {
+          oneToken = 10 ** uint256(ERC20(collateral).decimals());
+        }
+
+        uint256 usdAmount = minter.getUsdAmount(oneToken, collateral);
         require(usdAmount > 0, "0 usd amount");
         uint256 collateralAmount = amount * 1000000000000000000000000000000000000 / usdAmount / 4166666666666667000;
 
         if (collateral == address(0)) {
           payable(to).transfer(collateralAmount);
         } else {
-          uint256 preBalance = IERC20(collateral).balanceOf(address(this));
-          require(IERC20(collateral).transfer(to, collateralAmount), "failed to transfer");
-          require(IERC20(collateral).balanceOf(address(this)) + collateralAmount == preBalance, "failed to update balance");
+          uint256 collateralDecimals = uint256(ERC20(collateral).decimals());
+          if (collateralDecimals != 18) {
+            collateralAmount /= 10 ** (18-collateralDecimals);
+          }
+          uint256 preBalance = ERC20(collateral).balanceOf(address(this));
+          require(ERC20(collateral).transfer(to, collateralAmount), "failed to transfer");
+          require(ERC20(collateral).balanceOf(address(this)) + collateralAmount == preBalance, "failed to update balance");
         }
 
         _burn(msg.sender, amount);
