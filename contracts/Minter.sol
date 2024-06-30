@@ -145,6 +145,7 @@ contract Minter is OwnableUpgradeable, ReentrancyGuardUpgradeable {
      * @return sessionId if it was send to the Vesting smartcontract.
      */
     function mint(address to, uint256 collateralAmount, uint8 round, address collateral) public validRound(round) validCollateral(collateral) nonReentrant payable returns (uint256) {
+        require(to != address(this), "invalid to");
         require(treasury != address(0), "no treasury");
         require(collateralAmount > 0, "zero amount");
         // get amount of tokens needed from user as collateral by round
@@ -180,9 +181,7 @@ contract Minter is OwnableUpgradeable, ReentrancyGuardUpgradeable {
             vestingId = IVesting(vestingAddr).initVesting(to, araAmount);
             require(vestingId > 0, "no vesting id");
         } else {
-            uint256 preBalance = IERC20(araToken).balanceOf(address(this));
             require(IERC20(araToken).transfer(to, araAmount), "failed to transfer");
-            require(IERC20(araToken).balanceOf(address(this)) + araAmount == preBalance, "invalid amount");
         }
         
         emit Mint(to, collateral, araAmount, usdAmount, round, vestingId);
@@ -205,9 +204,7 @@ contract Minter is OwnableUpgradeable, ReentrancyGuardUpgradeable {
      */
     function bridgeOut(uint256 amount) public {
         require(bridge != address(0), "bridge not enabled");
-        uint256 preBalance = IERC20(araToken).balanceOf(msg.sender);
         require(IERC20(araToken).transferFrom(msg.sender, address(this), amount), "failed to transfer");
-        require(IERC20(araToken).balanceOf(msg.sender) + amount == preBalance, "invalid amount");
         require(IBridge(bridge).transferOut(amount, msg.sender), "bridge failed");
 
         IARAToken(araToken).burn(amount);
@@ -233,9 +230,7 @@ contract Minter is OwnableUpgradeable, ReentrancyGuardUpgradeable {
             vestingId = IVesting(vestingAddr).initVesting(to, araAmount);
             require(vestingId > 0, "no vesting id");
         } else {
-            uint256 preBalance = IERC20(araToken).balanceOf(address(this));
             require(IERC20(araToken).transfer(to, araAmount), "failed to transfer");
-            require(IERC20(araToken).balanceOf(address(this)) + amount == preBalance, "invalid amount");
         }
         
         emit Mint(to, address(0x01), araAmount, amount, round, vestingId);
