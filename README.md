@@ -52,6 +52,25 @@ In the Ara token, grant the Minter a Minter role.
 
 ---
 
+# For other projects (but Ara)
+
+### Setup
+
+1. Deploy Project Check
+2. Deploy Project Maintainer
+3. Set price setter in Check
+3. Set collateral in Check
+4. Set collateral price in Check
+4. Set new project in Check
+
+3. *Optionally* Deploy Addon
+
+In the minter smartcontract:
+
+1. Set the ara token by calling `setAra`.
+2. Set the check token by calling `setCheck`.
+3. Set the maintainer token by calling `setMaintainer`.
+
 ## Project Smartcontracts
 
 > Example deployed smartcontracts are:
@@ -91,3 +110,8 @@ Update wagmi config on the UI.
 ---
 
 Initiate a collateral
+
+---
+
+## Addon
+Addons for the projects, where every user requests specific type of the request.

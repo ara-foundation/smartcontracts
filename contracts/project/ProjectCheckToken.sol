@@ -4,17 +4,19 @@ pragma solidity ^0.8.20;
 
 import {ERC20Upgradeable} from "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol";
 
-import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import {IMAINToken} from "../IMAINToken.sol";
+import {IAddon} from "../addon/IAddon.sol";
+import {ICheck} from "../ICheck.sol";
 
 /**
  * @title ProjectCheckToken is the payment check issued to contributors by MAINToken holders
  * @author Medet Ahmetson <medet@ara.foundation>
  * @dev Requires ARAToken, MAINToken smartcontracts
  */
-contract ProjectCheckToken is ERC20Upgradeable {
-    IERC20 public dao;
-    IERC20 public main;
+contract ProjectCheckToken is ERC20Upgradeable, ICheck {
+    ERC20 public dao;
+    ERC20 public main;
 
       struct NewProject {
         Project params;
@@ -24,6 +26,16 @@ contract ProjectCheckToken is ERC20Upgradeable {
         uint256 countNo;
         uint256 votingPeriod;
         mapping (address => bool) voted;
+        Addon addonParams;
+      }
+
+      struct Addon {
+        address maintainer;
+        address collateral;
+        address addon;
+        uint256 amount;
+        uint256 minted;
+        bool cancelled;
       }
 
       struct Project {
@@ -53,15 +65,19 @@ contract ProjectCheckToken is ERC20Upgradeable {
       mapping (uint256 => NewProject) public newProjectVotings;
 
       mapping (address => CollateralVoting) public collateralVotings;
+      mapping (address => uint256) public checkPerCollateral; // per CHECK
+
+    address public priceSetter;
+      mapping (uint256 => Addon) public addons;
 
       event CollateralVotingInit(address indexed initializer, address indexed token, uint256 votingPeriod);
       event CollateralVote(address indexed voter, address token, uint256 votePower, bool agree);
       event CollateralVotingAction(address token, bool agree);
 
-
       event Mint(uint256 indexed projectId, address to, uint256 amount, bytes payload);
 
       event NewProjectInit(address indexed maintainer, uint256 indexed projectId, uint256 period, uint256 budget);
+      event NewAddonInit(address indexed maintainer, uint256 indexed projectId, address addon, address collateral, uint256 amount);
       event NewProjectVote(address indexed voter, uint256 projectId, uint256 votePower, bool agree);
       event NewProjectAction(uint256 projectId, bool agree);
 
@@ -80,15 +96,34 @@ contract ProjectCheckToken is ERC20Upgradeable {
         _;
       }
 
+      modifier onlyAddon(uint256 projectId_) {
+        require(addons[projectId_].addon == msg.sender, "not allowed");
+        _;
+      }
+
       modifier onlyLeader() {
         require(msg.sender == IMAINToken(address(main)).leader(), "not a leader");
         _;
       }
 
+      modifier onlyPriceSetter() {
+        require(msg.sender == priceSetter, "not a price setter");
+        _;
+      }
+
       function initialize(address ara_, address main_, string memory name_, string memory symbol_) initializer public {
         __ERC20_init(name_, symbol_);
-        dao = IERC20(ara_);
-        main = IERC20(main_);
+        dao = ERC20(ara_);
+        main = ERC20(main_);
+      }
+
+      function setPriceSetter(address _priceSetter) external onlyLeader {
+        priceSetter = _priceSetter;
+      }
+
+      function setCheckPerCollateral(address collateral, uint256 perCheck) external onlyPriceSetter {
+        require(isCollateral(collateral), "not collateral");
+        checkPerCollateral[collateral] = perCheck;
       }
 
       /**
@@ -127,8 +162,27 @@ contract ProjectCheckToken is ERC20Upgradeable {
         emit Mint(projectId_, to, amount, payload);
       }
 
+      /**
+       * Mint a token for the addon issuer
+       * @param projectId_ Addon Project ID
+       * @param to A contributor's address
+       * @param amount of CHECK contributor receives
+       * @param payload additional information about the addon task
+       */
+      function mintByAddon(uint256 projectId_, address to, uint256 amount, bytes calldata payload) external onlyAddon(projectId_) returns(bool) {
+        Addon storage addon = addons[projectId_];
+        require(addon.cancelled == false, "cancelled");
+
+        addon.minted += amount;
+        _mint(to, amount);
+
+        emit Mint(projectId_, to, amount, payload);
+
+        return true;
+      }
+
       function newProjectInit(address projectLeader, uint256 period, uint256 budget, uint256 votingPeriod, uint256 limit) public onlyLeader returns (uint256) {
-        require(IERC20(main).balanceOf(projectLeader) > 0, "project leader is not a maintainer");
+        require(main.balanceOf(projectLeader) > 0, "project leader is not a maintainer");
         require(period > 86400, "at least a day");
         require(budget > 0, "0 budget");
 
@@ -146,6 +200,34 @@ contract ProjectCheckToken is ERC20Upgradeable {
         return projectId;
       }
 
+      /**
+       * Initiate a voting to add a new project as an addon.
+       * Unlike another project, the addon doesn't have a budget or a time limit.
+       * Instead it allows everybody issue what kind of addon they want by providing fixed collateral amount.
+       * @param projectLeader The maintainer who is overseeing everything
+       * @param addon The addon smartcontract
+       * @param votingPeriod Voting to confirm that addon is accepted
+       * @param collateral From addon askers what we ask for
+       * @param amount Amount of tokens to ask from addon requesters
+       */
+      function newAddonInit(address projectLeader, address addon, uint256 votingPeriod, address collateral, uint256 amount) public onlyLeader returns (uint256) {
+        require(main.balanceOf(projectLeader) > 0, "project leader is not a maintainer");
+        require(votingPeriod > 0, "empty voting period");
+
+        projectId++;
+
+        newProjectVotings[projectId].addonParams.maintainer = projectLeader;
+        newProjectVotings[projectId].addonParams.amount = amount;
+        newProjectVotings[projectId].addonParams.collateral = collateral;
+        newProjectVotings[projectId].addonParams.addon = addon;
+        newProjectVotings[projectId].timeStart = block.timestamp;
+        newProjectVotings[projectId].votingPeriod = votingPeriod;
+
+        emit NewAddonInit(projectLeader, projectId, addon, collateral, amount);
+
+        return projectId;
+      }
+
       function newProjectVote(uint256 projectId_, bool agree) public onlyDao {
         NewProject storage thisProject = newProjectVotings[projectId_];
         require(thisProject.timeStart > 0, "session not found");
@@ -153,7 +235,7 @@ contract ProjectCheckToken is ERC20Upgradeable {
         require(thisProject.timeStart + thisProject.votingPeriod > block.timestamp
         || thisProject.actionTaken == false, "voting finished");
 
-        uint256 userBalance = IERC20(dao).balanceOf(msg.sender);
+        uint256 userBalance = dao.balanceOf(msg.sender);
 
         if (agree) {
           thisProject.countYes += userBalance;
@@ -174,8 +256,14 @@ contract ProjectCheckToken is ERC20Upgradeable {
         require(thisProject.actionTaken == false, "voting finished");
         
         if (thisProject.countYes > thisProject.countNo) {
-          projects[projectId_] = thisProject.params;
-          projects[projectId_].startTime = block.timestamp;
+          if (thisProject.addonParams.maintainer != address(0)) {
+            addons[projectId_] = thisProject.addonParams;
+            IAddon addon = IAddon(thisProject.addonParams.addon);
+            addon.setProjectId(projectId_);
+          } else {
+            projects[projectId_] = thisProject.params;
+            projects[projectId_].startTime = block.timestamp;
+          }
         }
         thisProject.actionTaken = true;
 
@@ -188,16 +276,73 @@ contract ProjectCheckToken is ERC20Upgradeable {
         return (thisProject.countNo > halfSupply || thisProject.countYes > halfSupply);
       }
 
-      function cancelProject(uint256 projectId_) public {
-        require(projects[projectId_].startTime > 0, "no project");
+      function cancelProject(uint256 projectId_) external {
+        if (projects[projectId_].startTime > 0) {
+          _cancelProject(projectId_);
+        } else {
+          _cancelAddon(projectId_);
+        }
+      }
+
+      function _cancelProject(uint256 projectId_) internal {
         require(projects[projectId_].cancelled == false, "already cancelled");
         require(IMAINToken(address(main)).leader() == msg.sender || projects[projectId_].maintainer == msg.sender, "not allowed");
       
         projects[projectId_].cancelled = true;
       }
 
+      function _cancelAddon(uint256 projectId_) internal {
+        require(addons[projectId_].maintainer != address(0), "not addon");
+        require(addons[projectId_].cancelled == false, "already cancelled");
+        require(IMAINToken(address(main)).leader() == msg.sender || addons[projectId_].maintainer == msg.sender, "not allowed");
+      
+        addons[projectId_].cancelled = true;
+        
+      }
+
       function isCollateral(address addr_) public view returns(bool) {
         return collaterals[addr_];
+      }
+
+      function addonPriceParams(uint256 projectId_) external view returns(address, uint256) {
+        Addon storage addon = addons[projectId_];
+        if (addon.maintainer == address(0) || addon.cancelled) {
+          return (address(0), 0);
+        }
+
+        return (addon.collateral, addon.amount);
+      }
+
+      function maintainerOf(uint256 projectId_) external view returns(address) {
+        if (projects[projectId_].maintainer != address(0)) {
+          return projects[projectId_].maintainer;
+        }
+
+        return addons[projectId_].maintainer;
+      }
+
+      function isCancelled(uint256 projectId_) external view returns(bool) {
+        if (projects[projectId_].maintainer != address(0)) {
+          return projects[projectId_].cancelled;
+        }
+
+        return addons[projectId_].cancelled;
+      }
+
+      function checkAmountForCollateral(address collateral, uint256 amount) external view returns(uint256) {
+        require(checkPerCollateral[collateral] > 0, "no collateral price");
+
+        if (collateral != address(0)) {
+          ERC20 token = ERC20(collateral);
+
+          uint8 decimals = token.decimals();
+          if (decimals != 18) {
+            amount *= 10 ** (18-decimals);
+          }
+        }
+
+        // 0.5 ETH / 0.0029 ETH = 1724.1379310344828 CHECK
+        return amount * (10 ** 18) / checkPerCollateral[collateral];
       }
 
       // COLLATERAL functions
@@ -248,17 +393,26 @@ contract ProjectCheckToken is ERC20Upgradeable {
           emit CollateralVotingAction(token, collateralVotings[token].countYes > collateralVotings[token].countNo);
       }
 
-      function redeemFromTreasury(address to, uint256 amount, address collateral) external {
-        require(balanceOf(msg.sender) >= amount, "not enough tokens");
+      function redeemFromTreasury(address to, uint256 checkAmount, address collateral) external {
+        require(balanceOf(msg.sender) >= checkAmount, "not enough tokens");
         require(isCollateral(collateral), "invalid address");
+        require(checkPerCollateral[collateral] > 0, "price not set");
 
         if (collateral == address(0)) {
+          uint256 amount = checkAmount * checkPerCollateral[collateral] / (10 ** 18);
           payable(to).transfer(amount);
         } else {
-          require(IERC20(collateral).transfer(to, amount), "failed to transfer");
+          ERC20 token = ERC20(collateral);
+          uint256 amount = checkAmount * checkPerCollateral[collateral] / (10 ** 18);
+
+          uint8 decimals = token.decimals();
+          if (decimals != 18) {
+            amount /= 10 ** (18-decimals);
+          }
+          require(token.transfer(to, amount), "failed to transfer");
         }
 
-        _burn(msg.sender, amount);
+        _burn(msg.sender, checkAmount);
       }
 
       function canCollateralTakeAction(CollateralVoting storage collateralVoting) internal view returns (bool) {
