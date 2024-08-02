@@ -28,6 +28,8 @@ npx hardhat run ./scripts/000-deploy-ara-token.js --network NETWORK_NAME
 
 - CHECK Token deployed to Base network: [0x9C0aCC45CEcB50444c0Ce3f29e822fEFF64ff401](https://basescan.org/token/0x9C0aCC45CEcB50444c0Ce3f29e822fEFF64ff401)
 
+- Contributor Deposit deployed to Base network: [0x82CB92b8492FA45b2AaF30d362B6E3feaC9c8E71](https://basescan.org/address/0x82CB92b8492FA45b2AaF30d362B6E3feaC9c8E71)
+
 ##### Supported Collateral Tokens
 
 - [Circle USD Stablecoin](https://basescan.org/token/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913)
