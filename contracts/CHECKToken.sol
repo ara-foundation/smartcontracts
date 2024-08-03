@@ -14,7 +14,6 @@ import {IMinter} from "./IMinter.sol";
  * @dev Requires ARAToken, MAINToken, Minter smartcontracts
  */
 contract CHECKToken is ERC20Upgradeable {
-
       uint256 public constant REVOKE_PERIOD = 864000;
       uint256 public constant LIMIT = 2592000;
       uint256 public constant HALF_SUPPLY = 37500000000000000000000000;

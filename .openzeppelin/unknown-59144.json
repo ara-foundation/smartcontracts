@@ -5,6 +5,16 @@
       "address": "0x1cEB3c60e2E74D6FDDAcDFEE23b8f2C91BBB6996",
       "txHash": "0x84239a69b67804985e0a4369cc721732657bd0f94b8c45f81e95cf8f245f0a0b",
       "kind": "transparent"
+    },
+    {
+      "address": "0xd3a9368d98EcA6E8d1Cb8C9D46C9fd132C9d469a",
+      "txHash": "0x7edf6f79145cfe3acaeaee1cf7b1dd31f738324e09942ba4ae748807a3390df3",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x543Db611d73F4f323EA54715EDCe85cf360CB87d",
+      "txHash": "0x018522b4f59d825541e299b680ea641808d5403f4efee994479ec65f7e26393c",
+      "kind": "transparent"
     }
   ],
   "impls": {
@@ -354,6 +364,1600 @@
               "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:45",
               "offset": 0,
               "slot": "4"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "cc4802eab367211d881e45fd76c6d24b0f82f3f01e860b6b85d28546884bab10": {
+      "address": "0x01a348ad2d4f2216f1Dc87b5d29303a1e329F3dE",
+      "txHash": "0x18a72774165f3c54f9a8ad410a64232f1620747aa264a334efd2a91182d490a9",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "dao",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(ERC20)1763",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:18"
+          },
+          {
+            "label": "main",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_contract(ERC20)1763",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:19"
+          },
+          {
+            "label": "collaterals",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:60"
+          },
+          {
+            "label": "projectId",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:62"
+          },
+          {
+            "label": "projects",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint256,t_struct(Project)2172_storage)",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:64"
+          },
+          {
+            "label": "newProjectVotings",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint256,t_struct(NewProject)2144_storage)",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:65"
+          },
+          {
+            "label": "collateralVotings",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_address,t_struct(CollateralVoting)2187_storage)",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:67"
+          },
+          {
+            "label": "checkPerCollateral",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:68"
+          },
+          {
+            "label": "priceSetter",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_address",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:70"
+          },
+          {
+            "label": "addons",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_uint256,t_struct(Addon)2157_storage)",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:71"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(ERC20Storage)146_storage": {
+            "label": "struct ERC20Upgradeable.ERC20Storage",
+            "members": [
+              {
+                "label": "_balances",
+                "type": "t_mapping(t_address,t_uint256)",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_allowances",
+                "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "_totalSupply",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "_name",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "_symbol",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_struct(InitializableStorage)65_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_contract(ERC20)1763": {
+            "label": "contract ERC20",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(CollateralVoting)2187_storage)": {
+            "label": "mapping(address => struct ProjectCheckToken.CollateralVoting)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Addon)2157_storage)": {
+            "label": "mapping(uint256 => struct ProjectCheckToken.Addon)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(NewProject)2144_storage)": {
+            "label": "mapping(uint256 => struct ProjectCheckToken.NewProject)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Project)2172_storage)": {
+            "label": "mapping(uint256 => struct ProjectCheckToken.Project)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Addon)2157_storage": {
+            "label": "struct ProjectCheckToken.Addon",
+            "members": [
+              {
+                "label": "maintainer",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "collateral",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "addon",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "cancelled",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(CollateralVoting)2187_storage": {
+            "label": "struct ProjectCheckToken.CollateralVoting",
+            "members": [
+              {
+                "label": "votingPeriod",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(NewProject)2144_storage": {
+            "label": "struct ProjectCheckToken.NewProject",
+            "members": [
+              {
+                "label": "params",
+                "type": "t_struct(Project)2172_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "8"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "9"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "10"
+              },
+              {
+                "label": "votingPeriod",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "11"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "12"
+              },
+              {
+                "label": "addonParams",
+                "type": "t_struct(Addon)2157_storage",
+                "offset": 0,
+                "slot": "13"
+              }
+            ],
+            "numberOfBytes": "608"
+          },
+          "t_struct(Project)2172_storage": {
+            "label": "struct ProjectCheckToken.Project",
+            "members": [
+              {
+                "label": "maintainer",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "period",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "startTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "limit",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "cancelled",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "6"
+              }
+            ],
+            "numberOfBytes": "224"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.ERC20": [
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_balances",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:38",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_allowances",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:40",
+              "offset": 0,
+              "slot": "1"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:42",
+              "offset": 0,
+              "slot": "2"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_name",
+              "type": "t_string_storage",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:44",
+              "offset": 0,
+              "slot": "3"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_symbol",
+              "type": "t_string_storage",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:45",
+              "offset": 0,
+              "slot": "4"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "032ea896252c3ffec96b74924cf8e4c0a0e6a41ca444b2a76efe4af6c674043d": {
+      "address": "0xA4d714dfF08368e24b101d32aDFF64e7D619cDD8",
+      "txHash": "0x3574b8e486d4ab79d2b7ed8b62910c1ef428ed6af159b5fa17b950bdefc2182d",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "nft",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC721)1367",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:18"
+          },
+          {
+            "label": "check",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_contract(ICheck)1458",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:19"
+          },
+          {
+            "label": "priceSetter",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:20"
+          },
+          {
+            "label": "projectId",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:27"
+          },
+          {
+            "label": "orders",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint256,t_bool)",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:29"
+          },
+          {
+            "label": "params",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint256,t_struct(Order)1494_storage)",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:30"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)65_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)14_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_bytes_storage": {
+            "label": "bytes",
+            "numberOfBytes": "32"
+          },
+          "t_contract(ICheck)1458": {
+            "label": "contract ICheck",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IERC721)1367": {
+            "label": "contract IERC721",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_uint256,t_bool)": {
+            "label": "mapping(uint256 => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Order)1494_storage)": {
+            "label": "mapping(uint256 => struct NftAddon.Order)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Order)1494_storage": {
+            "label": "struct NftAddon.Order",
+            "members": [
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "payload",
+                "type": "t_bytes_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "2ffd368ae407b4d95280c3898d319a2e8a7b17a41d734897e3f460983131a345": {
+      "address": "0x54Aa7d89c1Cb856e8aB5C5B5aAF4952dd6F0D16A",
+      "txHash": "0x4a20ba3966ca199b868a505a97877d91733d3eec367147d0a7fda3d8708bea1f",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "dao",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(ERC20)1763",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:18"
+          },
+          {
+            "label": "main",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_contract(ERC20)1763",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:19"
+          },
+          {
+            "label": "collaterals",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:60"
+          },
+          {
+            "label": "projectId",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:62"
+          },
+          {
+            "label": "projects",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint256,t_struct(Project)2172_storage)",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:64"
+          },
+          {
+            "label": "newProjectVotings",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint256,t_struct(NewProject)2144_storage)",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:65"
+          },
+          {
+            "label": "collateralVotings",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_address,t_struct(CollateralVoting)2187_storage)",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:67"
+          },
+          {
+            "label": "checkPerCollateral",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:68"
+          },
+          {
+            "label": "priceSetter",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_address",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:70"
+          },
+          {
+            "label": "addons",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_uint256,t_struct(Addon)2157_storage)",
+            "contract": "ProjectCheckToken",
+            "src": "contracts\\project\\ProjectCheckToken.sol:71"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(ERC20Storage)146_storage": {
+            "label": "struct ERC20Upgradeable.ERC20Storage",
+            "members": [
+              {
+                "label": "_balances",
+                "type": "t_mapping(t_address,t_uint256)",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_allowances",
+                "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "_totalSupply",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "_name",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "_symbol",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_struct(InitializableStorage)65_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_contract(ERC20)1763": {
+            "label": "contract ERC20",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(CollateralVoting)2187_storage)": {
+            "label": "mapping(address => struct ProjectCheckToken.CollateralVoting)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Addon)2157_storage)": {
+            "label": "mapping(uint256 => struct ProjectCheckToken.Addon)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(NewProject)2144_storage)": {
+            "label": "mapping(uint256 => struct ProjectCheckToken.NewProject)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Project)2172_storage)": {
+            "label": "mapping(uint256 => struct ProjectCheckToken.Project)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Addon)2157_storage": {
+            "label": "struct ProjectCheckToken.Addon",
+            "members": [
+              {
+                "label": "maintainer",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "collateral",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "addon",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "cancelled",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(CollateralVoting)2187_storage": {
+            "label": "struct ProjectCheckToken.CollateralVoting",
+            "members": [
+              {
+                "label": "votingPeriod",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_struct(NewProject)2144_storage": {
+            "label": "struct ProjectCheckToken.NewProject",
+            "members": [
+              {
+                "label": "params",
+                "type": "t_struct(Project)2172_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timeStart",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "actionTaken",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "8"
+              },
+              {
+                "label": "countYes",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "9"
+              },
+              {
+                "label": "countNo",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "10"
+              },
+              {
+                "label": "votingPeriod",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "11"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "12"
+              },
+              {
+                "label": "addonParams",
+                "type": "t_struct(Addon)2157_storage",
+                "offset": 0,
+                "slot": "13"
+              }
+            ],
+            "numberOfBytes": "608"
+          },
+          "t_struct(Project)2172_storage": {
+            "label": "struct ProjectCheckToken.Project",
+            "members": [
+              {
+                "label": "maintainer",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "period",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "startTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "limit",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "cancelled",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "6"
+              }
+            ],
+            "numberOfBytes": "224"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.ERC20": [
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_balances",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:38",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_allowances",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:40",
+              "offset": 0,
+              "slot": "1"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:42",
+              "offset": 0,
+              "slot": "2"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_name",
+              "type": "t_string_storage",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:44",
+              "offset": 0,
+              "slot": "3"
+            },
+            {
+              "contract": "ERC20Upgradeable",
+              "label": "_symbol",
+              "type": "t_string_storage",
+              "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:45",
+              "offset": 0,
+              "slot": "4"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "59acb8ab5007affff9169fd06e14bbc2dfc896ddf729eade874ead0879bb142f": {
+      "address": "0x279A4dc3EeF5b082dA349bd136E8503075A88963",
+      "txHash": "0xc2e56ceb801ac234636c708d1b797bfd795365856235caee6b5dc020c9f63a49",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "nft",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC721)1367",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:18"
+          },
+          {
+            "label": "check",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_contract(ICheck)1458",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:19"
+          },
+          {
+            "label": "priceSetter",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:20"
+          },
+          {
+            "label": "projectId",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:27"
+          },
+          {
+            "label": "orders",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint256,t_bool)",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:29"
+          },
+          {
+            "label": "params",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint256,t_struct(Order)1494_storage)",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:30"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)65_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)14_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_bytes_storage": {
+            "label": "bytes",
+            "numberOfBytes": "32"
+          },
+          "t_contract(ICheck)1458": {
+            "label": "contract ICheck",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IERC721)1367": {
+            "label": "contract IERC721",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_uint256,t_bool)": {
+            "label": "mapping(uint256 => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Order)1494_storage)": {
+            "label": "mapping(uint256 => struct NftAddon.Order)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Order)1494_storage": {
+            "label": "struct NftAddon.Order",
+            "members": [
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "payload",
+                "type": "t_bytes_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "cb687cded0ee102c3c6b1d69339f6861e0f19a0a8ea6ce43cda4aac04f61b561": {
+      "address": "0x79B35aDE62BEf9990eF9dd836f807161E28894b6",
+      "txHash": "0x7a143d8b9ce98e28b03e8359dafb5c5395184cfe0f693d0021aa3cfbc865226f",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "nft",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC721)1367",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:18"
+          },
+          {
+            "label": "check",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_contract(ICheck)1458",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:19"
+          },
+          {
+            "label": "priceSetter",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:20"
+          },
+          {
+            "label": "projectId",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:27"
+          },
+          {
+            "label": "orders",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint256,t_bool)",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:29"
+          },
+          {
+            "label": "params",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint256,t_struct(Order)1494_storage)",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:30"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)65_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)14_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_bytes_storage": {
+            "label": "bytes",
+            "numberOfBytes": "32"
+          },
+          "t_contract(ICheck)1458": {
+            "label": "contract ICheck",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IERC721)1367": {
+            "label": "contract IERC721",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_uint256,t_bool)": {
+            "label": "mapping(uint256 => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Order)1494_storage)": {
+            "label": "mapping(uint256 => struct NftAddon.Order)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Order)1494_storage": {
+            "label": "struct NftAddon.Order",
+            "members": [
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "payload",
+                "type": "t_bytes_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "1c92a072042b8555f019f166f3f1528f2161f9100c590abbafb6172386740780": {
+      "address": "0x60373A23eDd43CBc79ba3cbd463d62AA8C01A0D5",
+      "txHash": "0x8cc61da79429bd2e7cb3ac92bc166d9d5538cf9294143226c4452397618266c9",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "nft",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC721)1367",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:18"
+          },
+          {
+            "label": "check",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_contract(ICheck)1458",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:19"
+          },
+          {
+            "label": "priceSetter",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:20"
+          },
+          {
+            "label": "projectId",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:27"
+          },
+          {
+            "label": "orders",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint256,t_bool)",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:29"
+          },
+          {
+            "label": "params",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint256,t_struct(Order)1494_storage)",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:30"
+          },
+          {
+            "label": "activeOrders",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "NftAddon",
+            "src": "contracts\\addon\\NftAddon.sol:31"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)65_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)14_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_bytes_storage": {
+            "label": "bytes",
+            "numberOfBytes": "32"
+          },
+          "t_contract(ICheck)1458": {
+            "label": "contract ICheck",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IERC721)1367": {
+            "label": "contract IERC721",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_bool)": {
+            "label": "mapping(uint256 => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Order)1494_storage)": {
+            "label": "mapping(uint256 => struct NftAddon.Order)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Order)1494_storage": {
+            "label": "struct NftAddon.Order",
+            "members": [
+              {
+                "label": "minted",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "payload",
+                "type": "t_bytes_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
             }
           ],
           "erc7201:openzeppelin.storage.Initializable": [

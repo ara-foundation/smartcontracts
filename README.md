@@ -28,6 +28,8 @@ npx hardhat run ./scripts/000-deploy-ara-token.js --network NETWORK_NAME
 
 - CHECK Token deployed to Base network: [0x9C0aCC45CEcB50444c0Ce3f29e822fEFF64ff401](https://basescan.org/token/0x9C0aCC45CEcB50444c0Ce3f29e822fEFF64ff401)
 
+- Contributor Deposit deployed to Base network: [0x82CB92b8492FA45b2AaF30d362B6E3feaC9c8E71](https://basescan.org/address/0x82CB92b8492FA45b2AaF30d362B6E3feaC9c8E71)
+
 ##### Supported Collateral Tokens
 
 - [Circle USD Stablecoin](https://basescan.org/token/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913)
@@ -51,6 +53,25 @@ For the native token use the address(0): `0x000000000000000000000000000000000000
 In the Ara token, grant the Minter a Minter role.
 
 ---
+
+# For other projects (but Ara)
+
+### Setup
+
+1. Deploy Project Check
+2. Deploy Project Maintainer
+3. Set price setter in Check
+3. Set collateral in Check
+4. Set collateral price in Check
+4. Set new project in Check
+
+3. *Optionally* Deploy Addon
+
+In the minter smartcontract:
+
+1. Set the ara token by calling `setAra`.
+2. Set the check token by calling `setCheck`.
+3. Set the maintainer token by calling `setMaintainer`.
 
 ## Project Smartcontracts
 
@@ -91,3 +112,8 @@ Update wagmi config on the UI.
 ---
 
 Initiate a collateral
+
+---
+
+## Addon
+Addons for the projects, where every user requests specific type of the request.
