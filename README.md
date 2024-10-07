@@ -1,5 +1,7 @@
 # ARA Project SmartContracts
 
+## Visit [Version v1 documentation](./V1.md) as its recent smartcontracts.
+
 Script to deploy ARA Token:
 
 ```shell
@@ -18,6 +20,28 @@ npx hardhat run ./scripts/000-deploy-ara-token.js --network NETWORK_NAME
 
 - CHECK Token deployed to sepolia testnet address: [0xac95cFE35355C90765b5129F0AB1B890DE53bA22](https://sepolia.etherscan.io/address/0xac95cFE35355C90765b5129F0AB1B890DE53bA22)
 
+
+
+#### Testnet (BNB Smartchain)
+
+- [Voting V1](https://testnet.bscscan.com/address/0x854b1CB04296594427db0f7e96bcCBC35a05638B)
+- [Project V1](https://testnet.bscscan.com/address/0x88be435E8a4cad3cE6E7ABE3468199F03b97B9B3)
+- [Treasury V1](https://testnet.bscscan.com/address/0xD6dffF953AF507C7934F431d7b020d7C253377c3)
+- [Cashier V1](https://testnet.bscscan.com/address/0x51AED4dC4F45125Db25B5D7FF141D528e8A853B3)
+- [Maydone V1](https://testnet.bscscan.com/address/0x50059999373F4FbD5b522A2AdC42aEc69EAbadDD)
+- [Act V1](https://testnet.bscscan.com/address/0x959f18544660b8D144D82028faF04d0AD95E9a85)
+
+--- Custom ARA Sangha tokens
+- [ARA Token](https://testnet.bscscan.com/token/0x8938B0963333083e6FEBBC350fbf731bFD0401A8)
+- [Maintainer Token](https://testnet.bscscan.com/token/0x0f7967Ed6286d1AA03939836a43F3845eb76c690)
+- [Check Token](https://testnet.bscscan.com/token/0xF53dc83E9cE56612dd47cA24e7439C204B602A22)
+
+- [Usd](https://testnet.bscscan.com/token/0xE1EA187d652A4496285A971d40bfc346BDf9b854) &ndash; used to test Stable coin with a smaller decimal than Wei.
+
+##### Supported Collateral Tokens (BNB Testnet)
+Documentation to add collateral parameters on (Chainlink Price Feed Docs On BNB](https://docs.chain.link/data-feeds/price-feeds/addresses?network=bnb-chain&page=1#bnb-chain-testnet)
+
+
 #### Mainnet (Base L2)
 
 - ARA Token deployed to Base network: [0x040eEE6D8da3092381Bc9DFaB8fD4A0A9D8eEBDa](https://basescan.org/token/0x040eEE6D8da3092381Bc9DFaB8fD4A0A9D8eEBDa)
@@ -30,7 +54,7 @@ npx hardhat run ./scripts/000-deploy-ara-token.js --network NETWORK_NAME
 
 - Contributor Deposit deployed to Base network: [0x82CB92b8492FA45b2AaF30d362B6E3feaC9c8E71](https://basescan.org/address/0x82CB92b8492FA45b2AaF30d362B6E3feaC9c8E71)
 
-##### Supported Collateral Tokens
+##### Supported Collateral Tokens (BASE)
 
 - [Circle USD Stablecoin](https://basescan.org/token/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913)
 - [ETH](https://basescan.org/chart/price)
