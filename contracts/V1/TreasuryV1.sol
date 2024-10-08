@@ -209,7 +209,7 @@ contract TreasuryV1 is SharedV1, OwnableUpgradeable, ReentrancyGuardUpgradeable 
         } else {
             require(IERC20(collateral).transferFrom(msg.sender, address(this), collateralAmount), "failed to transfer");
             if (feeAmount > 0) {
-                require(IERC20(collateral_).transferFrom(msg.sender, araFeeReceiver, feeAmount), "failed to transfer");
+                require(IERC20(collateral).transferFrom(msg.sender, araFeeReceiver, feeAmount), "failed to transfer");
             }
         }
 
