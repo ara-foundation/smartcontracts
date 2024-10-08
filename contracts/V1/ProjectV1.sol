@@ -71,8 +71,10 @@ contract ProjectV1 is SharedV1, OwnableUpgradeable {
         initialLeaders[projectId_] = leader_;
         emit SetInitialLeader(projectId_, leader_);
     }
+
     function setSangha(uint256 projectId_, Sangha calldata sangha_) external onlyMaydone {
         sanghas[projectId_] = sangha_;
+        emit SetSangha(projectId_, sangha_);
     }
 
     function setCheck(uint256 projectId_, address check_) external onlyMaintainer(projectId_) {
