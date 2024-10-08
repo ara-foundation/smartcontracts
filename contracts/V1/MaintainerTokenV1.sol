@@ -12,6 +12,4 @@ contract MaintainerTokenV1 is ERC20 {
     _mint(leader, 100000000000000000000000); // 100_000 MAINTAINER tokens
     ownership = ownership_;
   }
-
-  
 }

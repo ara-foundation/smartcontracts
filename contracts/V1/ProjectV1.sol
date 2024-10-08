@@ -20,6 +20,7 @@ contract ProjectV1 is SharedV1, OwnableUpgradeable {
 
     mapping(uint256 => Project) public projects;
     mapping(uint256 => Sangha) public sanghas;
+    mapping(uint256 => address) public initialLeaders;
 
     modifier activeProject(uint256 projectId) {
         require(projects[projectId].active, "not active");
@@ -31,12 +32,19 @@ contract ProjectV1 is SharedV1, OwnableUpgradeable {
         _;
     }
 
+    modifier onlyMaydoneOrOwner() {
+        require(msg.sender == maydone || msg.sender == owner(), "not maydone or owner");
+        _;
+    }
+
     modifier onlyMaintainer(uint256 projectId) {
         require(IERC20(sanghas[projectId].maintainer).balanceOf(msg.sender) > 0, "not maintainer");
         _;
     }
 
-    event NewProject(uint256 indexed projectId, string name);
+    event NewProject(uint256 indexed projectId, Project project);
+    event SetSangha(uint256 indexed projectId, Sangha project);
+    event SetInitialLeader(uint256 indexed projectId, address initialLeader);
 
     function initialize() initializer public {
  	    // As we add proxy deployment from the client, let's change the admin to 
@@ -59,6 +67,10 @@ contract ProjectV1 is SharedV1, OwnableUpgradeable {
         return lastProjectId;
     }
 
+    function setInitialLeader(uint256 projectId_, address leader_) external onlyMaydoneOrOwner returns(uint256) {
+        initialLeaders[projectId_] = leader_;
+        emit SetInitialLeader(projectId_, leader_);
+    }
     function setSangha(uint256 projectId_, Sangha calldata sangha_) external onlyMaydone {
         sanghas[projectId_] = sangha_;
     }

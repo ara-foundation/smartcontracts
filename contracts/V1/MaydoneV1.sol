@@ -66,6 +66,7 @@ contract MaydoneV1 is SharedV1, OwnableUpgradeable {
         
         // save the logos, user-scenario and plan on db
         uint256 projectId = project.newProject(projectData);
+        project.setInitialLeader(projectId, msg.sender);
         
         bytes32 salt = keccak256(
             abi.encodePacked(
