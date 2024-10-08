@@ -59,10 +59,11 @@ contract ProjectV1 is SharedV1, OwnableUpgradeable {
     function newProject(Project calldata project_) external onlyMaydone returns(uint256) {
         ++lastProjectId;
 
+        projects[lastProjectId] = project_;
         projects[lastProjectId].active = true;
         projects[lastProjectId].startTime = block.timestamp;
 
-        emit NewProject(lastProjectId, project_.name);
+        emit NewProject(lastProjectId, projects[lastProjectId]);
 
         return lastProjectId;
     }
