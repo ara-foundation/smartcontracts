@@ -4,7 +4,6 @@ const { ethers, upgrades } = require('hardhat')
 const contractName = `VotingV1`;
 
 async function main() {
-  let accounts = await ethers.getSigners()
   const Contract = await ethers.getContractFactory(contractName)
   const contract = await upgrades.deployProxy(Contract, [])
   await contract.waitForDeployment()

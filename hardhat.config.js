@@ -46,7 +46,17 @@ module.exports = {
       // https://docs.bscscan.com/misc-tools-and-utilities/public-rpc-nodes#mainnet-bsc-rpc-nodes-chainid-56
       url: 'https://data-seed-prebsc-1-s1.binance.org:8545',
       accounts: [BNB_PRIVATE_KEY]
-    }
+    },
+    bnbTestnet: {
+      // https://docs.bscscan.com/misc-tools-and-utilities/public-rpc-nodes#mainnet-bsc-rpc-nodes-chainid-56
+      url: 'https://data-seed-prebsc-1-s1.binance.org:8545',
+      accounts: [BNB_PRIVATE_KEY]
+    },
+    polygon: {
+      chainId: 137,
+      url: process.env.POLYGON_RPC || 'https://polygon-pokt.nodies.app',
+      accounts: [process.env.POLYGON_PRIVATE_KEY],
+    },
   },
   etherscan: {
     // Your API key for Etherscan
@@ -57,6 +67,7 @@ module.exports = {
       linea: LINEASCAN_KEY,
       base: BASESCAN_KEY,
       bnbTestnet: BNBSCAN_KEY,
+      polygon: process.env.POLYGONSCAN_KEY,
     },
     customChains: [
       {
@@ -89,6 +100,14 @@ module.exports = {
         urls: {
           apiURL: 'https://api-testnet.bscscan.com/api',
           browserURL: 'https://testnet.bscscan.com/',
+        },
+      },
+      {
+        network: 'polygon',
+        chainId: 137,
+        urls: {
+          apiURL: 'https://api.polygonscan.com/api',
+          browserURL: 'https://polygonscan.com/',
         },
       },
     ],

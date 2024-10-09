@@ -41,6 +41,22 @@ npx hardhat run ./scripts/000-deploy-ara-token.js --network NETWORK_NAME
 ##### Supported Collateral Tokens (BNB Testnet)
 Documentation to add collateral parameters on (Chainlink Price Feed Docs On BNB](https://docs.chain.link/data-feeds/price-feeds/addresses?network=bnb-chain&page=1#bnb-chain-testnet)
 
+#### Polygon Mainnet
+
+- [Voting V1](https://polygonscan.com/address/0x4BAb3be1e10b8601B00032bFf135429fF0AE4B10)
+- [Project V1](https://polygonscan.com/address/0x3a93C3A6AF3900b08d01B31c028DA8Aeb7f4CCdA)
+- [Treasury V1](https://polygonscan.com/address/0x4a64f4f3536a8486dDb1A72B641AbA6bFa42b952)
+- [Cashier V1](https://polygonscan.com/address/0x727d078F25da927e21af87E7FfAB8abdb6E04413)
+- [Maydone V1](https://polygonscan.com/address/0x90BB6A77E69a0274Acf5215196De0Bd70F4D7572)
+- [Act V1](https://polygonscan.com/address/0x573ce6cbD55E4d05a3b9A6c46C12E4A66Eb24881)
+
+--- Custom ARA Sangha tokens
+- [ARA Token](https://polygonscan.com/token/0xFD1629508DE02d9658Bbea0c713884adEdDb1cC0)
+- [Maintainer Token](https://polygonscan.bscscan.com/token/0xbA320584bdf861C0a82750f5eF5e2298c81333a5)
+- [Check Token](https://polygonscan.bscscan.com/token/0xDF194e4D3d72ba6c6Ce6B2EcbC04AC8Ba399C6A1)
+
+###### Supported Collateral Tokens (Polygon Mainnet)
+Documentation to add collateral parameters on (Chainlink Price Feed Docs](https://docs.chain.link/data-feeds/price-feeds/addresses?network=polygon)
 
 #### Mainnet (Base L2)
 
