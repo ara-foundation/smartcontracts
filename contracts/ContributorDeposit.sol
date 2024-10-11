@@ -1,4 +1,3 @@
-// contracts/GLDToken.sol
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
@@ -7,7 +6,7 @@ import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/Own
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 /**
- * @title ProjectCheckToken is the payment check issued to contributors by MAINToken holders
+ * @title ContributorDeposit is the payment check issued to contributors by MAINToken holders
  * @author Medet Ahmetson <medet@ara.foundation>
  * @dev Requires ARAToken, MAINToken smartcontracts
  */
