@@ -39,7 +39,7 @@ npx hardhat run ./scripts/000-deploy-ara-token.js --network NETWORK_NAME
 - [Usd](https://testnet.bscscan.com/token/0xE1EA187d652A4496285A971d40bfc346BDf9b854) &ndash; used to test Stable coin with a smaller decimal than Wei.
 
 ##### Supported Collateral Tokens (BNB Testnet)
-Documentation to add collateral parameters on (Chainlink Price Feed Docs On BNB](https://docs.chain.link/data-feeds/price-feeds/addresses?network=bnb-chain&page=1#bnb-chain-testnet)
+Documentation to add collateral parameters on [Chainlink Price Feed Docs](https://docs.chain.link/data-feeds/price-feeds/addresses?network=bnb-chain&page=1#bnb-chain-testnet)
 
 #### Polygon Mainnet
 
@@ -52,11 +52,13 @@ Documentation to add collateral parameters on (Chainlink Price Feed Docs On BNB]
 
 --- Custom ARA Sangha tokens
 - [ARA Token](https://polygonscan.com/token/0xFD1629508DE02d9658Bbea0c713884adEdDb1cC0)
-- [Maintainer Token](https://polygonscan.bscscan.com/token/0xbA320584bdf861C0a82750f5eF5e2298c81333a5)
-- [Check Token](https://polygonscan.bscscan.com/token/0xDF194e4D3d72ba6c6Ce6B2EcbC04AC8Ba399C6A1)
+- [Maintainer Token](https://polygonscan.com/token/0xbA320584bdf861C0a82750f5eF5e2298c81333a5)
+- [Check Token](https://polygonscan.com/token/0xDF194e4D3d72ba6c6Ce6B2EcbC04AC8Ba399C6A1)
 
 ###### Supported Collateral Tokens (Polygon Mainnet)
-Documentation to add collateral parameters on (Chainlink Price Feed Docs](https://docs.chain.link/data-feeds/price-feeds/addresses?network=polygon)
+Documentation to add collateral parameters on [Chainlink Price Feed Docs](https://docs.chain.link/data-feeds/price-feeds/addresses?network=polygon)
+
+- USDT [0xc2132D05D31c914a87C6611C10748AEb04B58e8F](https://polygonscan.com/token/0xc2132D05D31c914a87C6611C10748AEb04B58e8F)
 
 #### Mainnet (Base L2)
 
