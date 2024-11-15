@@ -74,6 +74,10 @@ contract ActV1 is SharedV1, OwnableUpgradeable {
     }
 
     function newTask(uint256 projectId_, uint256 checkAmount_, uint256 duration_, string calldata payload_) external onlyMaintainer(projectId_) {
+        _newTask(projectId_, checkAmount_, duration_, payload_);
+    }
+
+    function _newTask(uint256 projectId_, uint256 checkAmount_, uint256 duration_, string memory payload_) internal {
         developments[projectId_].taskId++;
         require(developments[projectId_].minted + checkAmount_ <= developments[projectId_].cap, "exceeds the max");
         tasks[projectId_][developments[projectId_].taskId] = Task(checkAmount_, block.timestamp, block.timestamp + duration_, payload_);
@@ -99,5 +103,11 @@ contract ActV1 is SharedV1, OwnableUpgradeable {
         delete tasks[projectId_][taskId_];
 
         emit CancelTask(projectId_, taskId_, payload_);
+    }
+
+    function newTasks(uint256 projectId_, uint256[] calldata checkAmount_, uint256[] calldata duration_, string[] calldata payload_) external onlyMaintainer(projectId_) {
+        for (uint256 i = 0; i < checkAmount_.length; i++) {
+            _newTask(projectId_, checkAmount_[i], duration_[i], payload_[i]);
+        }
     }
 }
