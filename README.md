@@ -1,12 +1,14 @@
-# ARA Project SmartContracts
+# Ara SmartContracts
+Tracking the open-source collaborations on the blockchain.
 
-## Visit [Version v1 documentation](./V1.md) as its recent smartcontracts.
+### What is Ara?
+In Ara, every open-source project is called a galaxy. Once the user's issue is resolved, galaxy distributes the stars to the user, maintainer and contributor. Your goal as the project community is to gather as much stars as possible. Once, star amount exceeds a certain threshold, open-source project in Ara changes it's owner to the star owners: users, collaborators along with the maintainers.
 
-Script to deploy ARA Token:
+To learn more, and what benefit it has for open-source projects Check the website: https://ara.foundation/
 
-```shell
-npx hardhat run ./scripts/000-deploy-ara-token.js --network NETWORK_NAME
-```
+### Getting started
+The open-source-dao/ smartcontracts are not used by Ara anymore. There are here as the archive
+
 
 ### Deployed smartcontracts
 

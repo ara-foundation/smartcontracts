@@ -1,13 +1,25 @@
 {
-  "name": "ara-token",
+  "name": "@ara-web/smartcontracts",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Smart contracts for Ara, a blockchain-based platform for open-source project governance and collaboration. Enables decentralized ownership transfer through star-based tokenomics, where projects (galaxies) distribute stars to contributors, maintainers, and users. Once a threshold is reached, project ownership transfers to star token holders.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "blockchain",
+    "smart-contracts",
+    "ethereum",
+    "open-source",
+    "governance",
+    "dao",
+    "solidity",
+    "hardhat",
+    "ara",
+    "galaxy",
+    "stars",
+    "tokenomics"
+  ],
+  "author": "Ara Foundation",
   "license": "ISC",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
