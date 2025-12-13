@@ -1,0 +1,40 @@
+# Source files
+contracts/
+scripts/
+artifacts/
+cache/
+typechain-types/
+
+# Configuration files
+hardhat.config.ts
+wagmi.config.ts
+.env
+.env.example
+.nvmrc
+.npmrc
+
+# Dependencies
+node_modules/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build artifacts
+coverage/
+coverage.json
+*.log
+.DS_Store
+
+# Test files
+test/
+*.test.ts
+*.test.js
+

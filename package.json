@@ -3,6 +3,21 @@
   "version": "1.0.0",
   "type": "module",
   "description": "Smart contracts for Ara, a blockchain-based platform for open-source project governance and collaboration. Enables decentralized ownership transfer through star-based tokenomics, where projects (galaxies) distribute stars to contributors, maintainers, and users. Once a threshold is reached, project ownership transfers to star token holders.",
+  "main": "./abis.ts",
+  "types": "./abis.ts",
+  "exports": {
+    "./deployed": {
+      "types": "./abis.ts",
+      "default": "./abis.ts"
+    }
+  },
+  "files": [
+    "abis.ts",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "wagmi": "wagmi generate"
@@ -24,22 +39,22 @@
   "author": "Ara Foundation",
   "license": "ISC",
   "devDependencies": {
+    "@chainlink/contracts": "^1.1.1",
     "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
     "@nomicfoundation/hardhat-ethers": "^4.0.3",
     "@nomicfoundation/hardhat-network-helpers": "^3.0.3",
     "@nomicfoundation/hardhat-toolbox": "^6.0.0",
     "@nomicfoundation/hardhat-verify": "^3.0.0",
+    "@openzeppelin/contracts": "^5.0.2",
+    "@openzeppelin/contracts-upgradeable": "^5.0.2",
     "@openzeppelin/hardhat-upgrades": "^3.9.1",
     "@types/node": "^20.0.0",
+    "@wagmi/cli": "^2.8.0",
+    "dotenv": "^16.4.5",
     "hardhat": "^3.0.0",
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@chainlink/contracts": "^1.1.1",
-    "@openzeppelin/contracts": "^5.0.2",
-    "@openzeppelin/contracts-upgradeable": "^5.0.2",
-    "@wagmi/cli": "^2.8.0",
-    "@wagmi/core": "^3.0.0",
-    "dotenv": "^16.4.5"
+    "@wagmi/core": "^3.0.0"
   }
 }
