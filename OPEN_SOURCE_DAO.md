@@ -1,22 +1,17 @@
-# Ara SmartContracts
+# Open Source Dao
+Build and run web projects as a dao.
 
-Tracking the open-source collaborations on the blockchain.
+How it works:
+* In the ara launchpad, obtain project tokens by putting USDT/BTC into the treasury.
+* A maintainer controls the treasury. Either spending for himself, for technical expenditure or to the contributors.
+* However, treasury expenditures are always tracked by issues/roadmaps/tasks
+* Users with the project tokens have the right to change the maintainer by vote.
 
-### What is Ara?
-In Ara, every open-source project is called a galaxy.
-Once the user's issue is resolved, galaxy distributes the stars
-to the user, maintainer and contributor.
-Your goal as the project community is to gather as much stars as possible.
-Once, star amount exceeds a certain threshold, open-source project in Ara changes
-it's owner to the star owners: users, collaborators along with the maintainers.
+> This is for historical reasons. It's not used by Ara.
 
-> To learn more, and what benefit it has for open-source projects
-> Check the website: https://ara.foundation/
+## Visit [Version v1 documentation](./V1.md) for technical details.
 
-## Getting started
-
-The `open-source-dao/` smartcontracts are not used by Ara anymore. There are here as the archive
-
+## 
 Script to deploy ARA Token:
 
 ```shell
