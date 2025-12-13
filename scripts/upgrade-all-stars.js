@@ -1,15 +1,16 @@
-// scripts/create-box.js
-const { ethers, upgrades } = require('hardhat')
+import { ethers, upgrades } from 'hardhat';
 
-const contractName = `TreasuryV1`;
+const contractName = `AllStars`;
 const contractAddr = "0xD6dffF953AF507C7934F431d7b020d7C253377c3";
 
 async function main() {
-  let accounts = await ethers.getSigners()
   const Contract = await ethers.getContractFactory(contractName)
   const contract = await upgrades.upgradeProxy(contractAddr, Contract, [])
   await contract.waitForDeployment()
-  console.log(`${contractName} upgraded address ${await contract.getAddress()}`)
+  console.log(`${contractName} upgraded: ${await contract.getAddress()}`)
 }
 
-main()
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
