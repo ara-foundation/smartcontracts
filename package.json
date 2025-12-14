@@ -1,6 +1,6 @@
 {
   "name": "@ara-web/smartcontracts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "Smart contracts for Ara, a blockchain-based platform for open-source project governance and collaboration. Enables decentralized ownership transfer through star-based tokenomics, where projects (galaxies) distribute stars to contributors, maintainers, and users. Once a threshold is reached, project ownership transfers to star token holders.",
   "main": "./abis.ts",
@@ -47,10 +47,11 @@
     "@nomicfoundation/hardhat-verify": "^3.0.0",
     "@openzeppelin/contracts": "^5.0.2",
     "@openzeppelin/contracts-upgradeable": "^5.0.2",
-    "@openzeppelin/hardhat-upgrades": "^3.9.1",
+    "@openzeppelin/upgrades-core": "^1.44.2",
     "@types/node": "^20.0.0",
     "@wagmi/cli": "^2.8.0",
     "dotenv": "^16.4.5",
+    "ethers": "^6.16.0",
     "hardhat": "^3.0.0",
     "typescript": "^5.0.0"
   },

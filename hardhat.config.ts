@@ -1,15 +1,15 @@
 import { defineConfig } from "hardhat/config";
 import hardhatVerify from "@nomicfoundation/hardhat-verify";
+import hardhatEthers from "@nomicfoundation/hardhat-ethers";
 // TODO: @openzeppelin/hardhat-upgrades not yet compatible with Hardhat v3
 // Re-enable when compatible version is available
-// import "@openzeppelin/hardhat-upgrades";
 import "dotenv/config";
 
 const BASE_SEPOLIA_PRIVATE_KEY = process.env.BASE_SEPOLIA_PRIVATE_KEY || "";
 const ETHERSCAN_KEY = process.env.ETHERSCAN_KEY || "";
 
 export default defineConfig({
-  plugins: [hardhatVerify],
+  plugins: [hardhatVerify, hardhatEthers],
   solidity: {
     version: "0.8.20",
     settings: {

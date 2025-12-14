@@ -13,7 +13,7 @@ export default defineConfig({
       exclude: ['build-info/**', '*.dbg.json', 'artifacts.d.ts'],
       deployments: {
         AllStars: {
-          84532: '0xf689f76d8f060c7472b1f0b71c191a1605ab3568',
+          84532: '0x70b089840FB3D567C5d618b222503d68A8ad0dAa',
         },
       },
       commands: {

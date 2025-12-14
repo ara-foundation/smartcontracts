@@ -10,7 +10,7 @@ import {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const allStarsAbi = [
   { type: 'error', inputs: [], name: 'AccessControlBadConfirmation' },
@@ -357,7 +357,7 @@ export const allStarsAbi = [
   },
   {
     type: 'function',
-    inputs: [],
+    inputs: [{ name: 'admin', internalType: 'address', type: 'address' }],
     name: 'initialize',
     outputs: [],
     stateMutability: 'nonpayable',
@@ -448,19 +448,88 @@ export const allStarsAbi = [
 ] as const
 
 /**
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const allStarsAddress = {
-  84532: '0xf689F76d8F060c7472b1f0B71C191A1605AB3568',
+  84532: '0x70b089840FB3D567C5d618b222503d68A8ad0dAa',
 } as const
 
 /**
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const allStarsConfig = {
   address: allStarsAddress,
   abi: allStarsAbi,
 } as const
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ProxyWrapper
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+export const proxyWrapperAbi = [
+  {
+    type: 'constructor',
+    inputs: [
+      { name: 'implementation', internalType: 'address', type: 'address' },
+      { name: 'admin', internalType: 'address', type: 'address' },
+      { name: '_data', internalType: 'bytes', type: 'bytes' },
+    ],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'target', internalType: 'address', type: 'address' }],
+    name: 'AddressEmptyCode',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'admin', internalType: 'address', type: 'address' }],
+    name: 'ERC1967InvalidAdmin',
+  },
+  {
+    type: 'error',
+    inputs: [
+      { name: 'implementation', internalType: 'address', type: 'address' },
+    ],
+    name: 'ERC1967InvalidImplementation',
+  },
+  { type: 'error', inputs: [], name: 'ERC1967NonPayable' },
+  { type: 'error', inputs: [], name: 'FailedInnerCall' },
+  { type: 'error', inputs: [], name: 'ProxyDeniedAdminAccess' },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      {
+        name: 'previousAdmin',
+        internalType: 'address',
+        type: 'address',
+        indexed: false,
+      },
+      {
+        name: 'newAdmin',
+        internalType: 'address',
+        type: 'address',
+        indexed: false,
+      },
+    ],
+    name: 'AdminChanged',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      {
+        name: 'implementation',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+    ],
+    name: 'Upgraded',
+  },
+  { type: 'fallback', stateMutability: 'payable' },
+] as const
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Star
@@ -701,7 +770,7 @@ export const starAbi = [
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link allStarsAbi}__
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const readAllStars = /*#__PURE__*/ createReadContract({
   abi: allStarsAbi,
@@ -711,7 +780,7 @@ export const readAllStars = /*#__PURE__*/ createReadContract({
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"BACKEND_ROLE"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const readAllStarsBackendRole = /*#__PURE__*/ createReadContract({
   abi: allStarsAbi,
@@ -722,7 +791,7 @@ export const readAllStarsBackendRole = /*#__PURE__*/ createReadContract({
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"DEFAULT_ADMIN_ROLE"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const readAllStarsDefaultAdminRole = /*#__PURE__*/ createReadContract({
   abi: allStarsAbi,
@@ -733,7 +802,7 @@ export const readAllStarsDefaultAdminRole = /*#__PURE__*/ createReadContract({
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"galaxies"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const readAllStarsGalaxies = /*#__PURE__*/ createReadContract({
   abi: allStarsAbi,
@@ -744,7 +813,7 @@ export const readAllStarsGalaxies = /*#__PURE__*/ createReadContract({
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"getRoleAdmin"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const readAllStarsGetRoleAdmin = /*#__PURE__*/ createReadContract({
   abi: allStarsAbi,
@@ -755,7 +824,7 @@ export const readAllStarsGetRoleAdmin = /*#__PURE__*/ createReadContract({
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"hasRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const readAllStarsHasRole = /*#__PURE__*/ createReadContract({
   abi: allStarsAbi,
@@ -766,7 +835,7 @@ export const readAllStarsHasRole = /*#__PURE__*/ createReadContract({
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"solarForged"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const readAllStarsSolarForged = /*#__PURE__*/ createReadContract({
   abi: allStarsAbi,
@@ -777,7 +846,7 @@ export const readAllStarsSolarForged = /*#__PURE__*/ createReadContract({
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"supportsInterface"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const readAllStarsSupportsInterface = /*#__PURE__*/ createReadContract({
   abi: allStarsAbi,
@@ -788,7 +857,7 @@ export const readAllStarsSupportsInterface = /*#__PURE__*/ createReadContract({
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"universeSpace"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const readAllStarsUniverseSpace = /*#__PURE__*/ createReadContract({
   abi: allStarsAbi,
@@ -799,7 +868,7 @@ export const readAllStarsUniverseSpace = /*#__PURE__*/ createReadContract({
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link allStarsAbi}__
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const writeAllStars = /*#__PURE__*/ createWriteContract({
   abi: allStarsAbi,
@@ -809,7 +878,7 @@ export const writeAllStars = /*#__PURE__*/ createWriteContract({
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"addGalaxy"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const writeAllStarsAddGalaxy = /*#__PURE__*/ createWriteContract({
   abi: allStarsAbi,
@@ -820,7 +889,7 @@ export const writeAllStarsAddGalaxy = /*#__PURE__*/ createWriteContract({
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"grantRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const writeAllStarsGrantRole = /*#__PURE__*/ createWriteContract({
   abi: allStarsAbi,
@@ -831,7 +900,7 @@ export const writeAllStarsGrantRole = /*#__PURE__*/ createWriteContract({
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"initialize"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const writeAllStarsInitialize = /*#__PURE__*/ createWriteContract({
   abi: allStarsAbi,
@@ -842,7 +911,7 @@ export const writeAllStarsInitialize = /*#__PURE__*/ createWriteContract({
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"renounceRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const writeAllStarsRenounceRole = /*#__PURE__*/ createWriteContract({
   abi: allStarsAbi,
@@ -853,7 +922,7 @@ export const writeAllStarsRenounceRole = /*#__PURE__*/ createWriteContract({
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"revokeRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const writeAllStarsRevokeRole = /*#__PURE__*/ createWriteContract({
   abi: allStarsAbi,
@@ -864,7 +933,7 @@ export const writeAllStarsRevokeRole = /*#__PURE__*/ createWriteContract({
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"solarForge"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const writeAllStarsSolarForge = /*#__PURE__*/ createWriteContract({
   abi: allStarsAbi,
@@ -875,7 +944,7 @@ export const writeAllStarsSolarForge = /*#__PURE__*/ createWriteContract({
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"spaceCoord"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const writeAllStarsSpaceCoord = /*#__PURE__*/ createWriteContract({
   abi: allStarsAbi,
@@ -886,7 +955,7 @@ export const writeAllStarsSpaceCoord = /*#__PURE__*/ createWriteContract({
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link allStarsAbi}__
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const simulateAllStars = /*#__PURE__*/ createSimulateContract({
   abi: allStarsAbi,
@@ -896,7 +965,7 @@ export const simulateAllStars = /*#__PURE__*/ createSimulateContract({
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"addGalaxy"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const simulateAllStarsAddGalaxy = /*#__PURE__*/ createSimulateContract({
   abi: allStarsAbi,
@@ -907,7 +976,7 @@ export const simulateAllStarsAddGalaxy = /*#__PURE__*/ createSimulateContract({
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"grantRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const simulateAllStarsGrantRole = /*#__PURE__*/ createSimulateContract({
   abi: allStarsAbi,
@@ -918,7 +987,7 @@ export const simulateAllStarsGrantRole = /*#__PURE__*/ createSimulateContract({
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"initialize"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const simulateAllStarsInitialize = /*#__PURE__*/ createSimulateContract({
   abi: allStarsAbi,
@@ -929,7 +998,7 @@ export const simulateAllStarsInitialize = /*#__PURE__*/ createSimulateContract({
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"renounceRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const simulateAllStarsRenounceRole =
   /*#__PURE__*/ createSimulateContract({
@@ -941,7 +1010,7 @@ export const simulateAllStarsRenounceRole =
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"revokeRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const simulateAllStarsRevokeRole = /*#__PURE__*/ createSimulateContract({
   abi: allStarsAbi,
@@ -952,7 +1021,7 @@ export const simulateAllStarsRevokeRole = /*#__PURE__*/ createSimulateContract({
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"solarForge"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const simulateAllStarsSolarForge = /*#__PURE__*/ createSimulateContract({
   abi: allStarsAbi,
@@ -963,7 +1032,7 @@ export const simulateAllStarsSolarForge = /*#__PURE__*/ createSimulateContract({
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link allStarsAbi}__ and `functionName` set to `"spaceCoord"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const simulateAllStarsSpaceCoord = /*#__PURE__*/ createSimulateContract({
   abi: allStarsAbi,
@@ -974,7 +1043,7 @@ export const simulateAllStarsSpaceCoord = /*#__PURE__*/ createSimulateContract({
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link allStarsAbi}__
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const watchAllStarsEvent = /*#__PURE__*/ createWatchContractEvent({
   abi: allStarsAbi,
@@ -984,7 +1053,7 @@ export const watchAllStarsEvent = /*#__PURE__*/ createWatchContractEvent({
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link allStarsAbi}__ and `eventName` set to `"GalaxyAdded"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const watchAllStarsGalaxyAddedEvent =
   /*#__PURE__*/ createWatchContractEvent({
@@ -996,7 +1065,7 @@ export const watchAllStarsGalaxyAddedEvent =
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link allStarsAbi}__ and `eventName` set to `"GalaxyCreated"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const watchAllStarsGalaxyCreatedEvent =
   /*#__PURE__*/ createWatchContractEvent({
@@ -1008,7 +1077,7 @@ export const watchAllStarsGalaxyCreatedEvent =
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link allStarsAbi}__ and `eventName` set to `"GalaxySpaceSizeChanged"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const watchAllStarsGalaxySpaceSizeChangedEvent =
   /*#__PURE__*/ createWatchContractEvent({
@@ -1020,7 +1089,7 @@ export const watchAllStarsGalaxySpaceSizeChangedEvent =
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link allStarsAbi}__ and `eventName` set to `"Initialized"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const watchAllStarsInitializedEvent =
   /*#__PURE__*/ createWatchContractEvent({
@@ -1032,7 +1101,7 @@ export const watchAllStarsInitializedEvent =
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link allStarsAbi}__ and `eventName` set to `"RoleAdminChanged"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const watchAllStarsRoleAdminChangedEvent =
   /*#__PURE__*/ createWatchContractEvent({
@@ -1044,7 +1113,7 @@ export const watchAllStarsRoleAdminChangedEvent =
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link allStarsAbi}__ and `eventName` set to `"RoleGranted"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const watchAllStarsRoleGrantedEvent =
   /*#__PURE__*/ createWatchContractEvent({
@@ -1056,7 +1125,7 @@ export const watchAllStarsRoleGrantedEvent =
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link allStarsAbi}__ and `eventName` set to `"RoleRevoked"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const watchAllStarsRoleRevokedEvent =
   /*#__PURE__*/ createWatchContractEvent({
@@ -1068,7 +1137,7 @@ export const watchAllStarsRoleRevokedEvent =
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link allStarsAbi}__ and `eventName` set to `"SolarForged"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const watchAllStarsSolarForgedEvent =
   /*#__PURE__*/ createWatchContractEvent({
@@ -1080,7 +1149,7 @@ export const watchAllStarsSolarForgedEvent =
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link allStarsAbi}__ and `eventName` set to `"ThresholdReached"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const watchAllStarsThresholdReachedEvent =
   /*#__PURE__*/ createWatchContractEvent({
@@ -1092,13 +1161,38 @@ export const watchAllStarsThresholdReachedEvent =
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link allStarsAbi}__ and `eventName` set to `"UniverseSpaceSizeChanged"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+ * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
  */
 export const watchAllStarsUniverseSpaceSizeChangedEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: allStarsAbi,
     address: allStarsAddress,
     eventName: 'UniverseSpaceSizeChanged',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link proxyWrapperAbi}__
+ */
+export const watchProxyWrapperEvent = /*#__PURE__*/ createWatchContractEvent({
+  abi: proxyWrapperAbi,
+})
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link proxyWrapperAbi}__ and `eventName` set to `"AdminChanged"`
+ */
+export const watchProxyWrapperAdminChangedEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: proxyWrapperAbi,
+    eventName: 'AdminChanged',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link proxyWrapperAbi}__ and `eventName` set to `"Upgraded"`
+ */
+export const watchProxyWrapperUpgradedEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: proxyWrapperAbi,
+    eventName: 'Upgraded',
   })
 
 /**

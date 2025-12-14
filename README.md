@@ -33,7 +33,7 @@ import { baseSepolia } from 'wagmi/chains';
 
 // Read galaxy data
 const galaxyData = await createReadContract({
-  address: '0xf689f76d8f060c7472b1f0b71c191a1605ab3568',
+  address: '0x70b089840FB3D567C5d618b222503d68A8ad0dAa',
   abi: allStarsAbi,
   functionName: 'galaxies',
   args: [galaxyId],
@@ -49,7 +49,7 @@ import { allStarsAbi } from '@ara-web/smartcontracts/deployed';
 
 // Add a new galaxy (backend only)
 await createWriteContract({
-  address: '0xf689f76d8f060c7472b1f0b71c191a1605ab3568',
+  address: '0x70b089840FB3D567C5d618b222503d68A8ad0dAa',
   abi: allStarsAbi,
   functionName: 'addGalaxy',
   args: [/* galaxy parameters */],
@@ -64,7 +64,7 @@ import { allStarsAbi } from '@ara-web/smartcontracts/deployed';
 
 // Watch for new galaxies
 createWatchContractEvent({
-  address: '0xf689f76d8f060c7472b1f0b71c191a1605ab3568',
+  address: '0x70b089840FB3D567C5d618b222503d68A8ad0dAa',
   abi: allStarsAbi,
   eventName: 'GalaxyAdded',
   onLogs(logs) {
@@ -81,7 +81,7 @@ import { allStarsAbi } from '@ara-web/smartcontracts/deployed';
 
 function GalaxyInfo({ galaxyId }: { galaxyId: number }) {
   const { data: galaxy } = useReadContract({
-    address: '0xf689f76d8f060c7472b1f0b71c191a1605ab3568',
+    address: '0x70b089840FB3D567C5d618b222503d68A8ad0dAa',
     abi: allStarsAbi,
     functionName: 'galaxies',
     args: [galaxyId],
@@ -98,9 +98,9 @@ function GalaxyInfo({ galaxyId }: { galaxyId: number }) {
 ### Base Sepolia Network
 
 Smartcontracts to track on blockchain explorers:
-- Etherscan: [All Stars](https://sepolia.basescan.org/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
-- Blockscout: [All Stars](https://base-sepolia.blockscout.com/address/0xf689f76d8f060c7472b1f0b71c191a1605ab3568#code)
-- Sourcify: [All Stars](https://sourcify.dev/server/repo-ui/84532/0xf689f76d8f060c7472b1f0b71c191a1605ab3568)
+- Etherscan: [All Stars](https://sepolia.basescan.org/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
+- Blockscout: [All Stars](https://base-sepolia.blockscout.com/address/0x70b089840FB3D567C5d618b222503d68A8ad0dAa#code)
+- Sourcify: [All Stars](https://sourcify.dev/server/repo-ui/84532/0x70b089840FB3D567C5d618b222503d68A8ad0dAa)
 
 ---
 

@@ -59,10 +59,10 @@ contract AllStars is AccessControlUpgradeable {
         _;
     }
 
-    function initialize() public initializer {
+    function initialize(address admin) public initializer {
         __AccessControl_init();
-        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
-        _grantRole(BACKEND_ROLE, msg.sender);
+        _grantRole(DEFAULT_ADMIN_ROLE, admin);
+        _grantRole(BACKEND_ROLE, admin);
 
         // Set default universe space to laptop screen size
         universeSpace = Space({
