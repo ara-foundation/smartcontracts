@@ -6,7 +6,7 @@
   "main": "./abis.ts",
   "types": "./abis.ts",
   "exports": {
-    "./deployed": {
+    ".": {
       "types": "./abis.ts",
       "default": "./abis.ts"
     }
@@ -19,7 +19,7 @@
     "access": "public"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node test/imports.test.js",
     "wagmi": "wagmi generate"
   },
   "keywords": [
